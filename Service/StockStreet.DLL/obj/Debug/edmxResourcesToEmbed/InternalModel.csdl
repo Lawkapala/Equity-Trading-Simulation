@@ -1,0 +1,259 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="StockStInternalModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Block">
+    <Key>
+      <PropertyRef Name="blockId" />
+    </Key>
+    <Property Name="blockId" Type="Int32" Nullable="false" />
+    <Property Name="userName" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="symbol" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="side" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="price" Type="Decimal" Precision="10" Scale="4" Nullable="false" />
+    <Property Name="stopPrice" Type="Decimal" Precision="10" Scale="4" />
+    <Property Name="totalQuantity" Type="Int32" Nullable="false" />
+    <Property Name="openQuantity" Type="Int32" />
+    <Property Name="executedQuantity" Type="Int32" />
+    <Property Name="blockStatus" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="createTStamp" Type="DateTime" Precision="3" />
+    <Property Name="updatedTStamp" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="Market" Relationship="Self.FK__Block__symbol__1367E606" FromRole="Block" ToRole="Market" />
+    <NavigationProperty Name="UserDetail" Relationship="Self.FK__Block__userName__0AD2A005" FromRole="Block" ToRole="UserDetails" />
+    <NavigationProperty Name="OrderDetails" Relationship="Self.FK__OrderDeta__block__0BC6C43E" FromRole="Block" ToRole="OrderDetails" />
+    <Property Name="orderType" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Market">
+    <Key>
+      <PropertyRef Name="symbol" />
+    </Key>
+    <Property Name="symbol" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="stockName" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="marketPrice" Type="Decimal" Precision="10" Scale="4" Nullable="false" />
+    <NavigationProperty Name="Blocks" Relationship="Self.FK__Block__symbol__1367E606" FromRole="Market" ToRole="Block" />
+    <NavigationProperty Name="Orders" Relationship="Self.FK__Orders__symbol__145C0A3F" FromRole="Market" ToRole="Orders" />
+  </EntityType>
+  <EntityType Name="OrderDetail">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="blockId" Type="Int32" Nullable="false" />
+    <Property Name="orderId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Block" Relationship="Self.FK__OrderDeta__block__0BC6C43E" FromRole="OrderDetails" ToRole="Block" />
+    <NavigationProperty Name="Order" Relationship="Self.FK__OrderDeta__order__108B795B" FromRole="OrderDetails" ToRole="Orders" />
+  </EntityType>
+  <EntityType Name="Order">
+    <Key>
+      <PropertyRef Name="orderId" />
+    </Key>
+    <Property Name="orderId" Type="Int32" Nullable="false" />
+    <Property Name="orderStatus" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="symbol" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="side" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="orderType" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="orderQualifier" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="userName" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="portfolioId" Type="Int32" Nullable="false" />
+    <Property Name="price" Type="Decimal" Precision="10" Scale="4" Nullable="false" />
+    <Property Name="stopPrice" Type="Decimal" Precision="10" Scale="4" />
+    <Property Name="totalQuantity" Type="Int32" Nullable="false" />
+    <Property Name="openQuantity" Type="Int32" />
+    <Property Name="executedQuantity" Type="Int32" />
+    <Property Name="notes" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="createTStamp" Type="DateTime" Precision="3" />
+    <Property Name="updatedTStamp" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="Market" Relationship="Self.FK__Orders__symbol__145C0A3F" FromRole="Orders" ToRole="Market" />
+    <NavigationProperty Name="OrderDetails" Relationship="Self.FK__OrderDeta__order__108B795B" FromRole="Orders" ToRole="OrderDetails" />
+    <NavigationProperty Name="Portfolio" Relationship="Self.FK__Orders__portfoli__0F975522" FromRole="Orders" ToRole="Portfolio" />
+    <NavigationProperty Name="UserDetail" Relationship="Self.FK__Orders__userName__0EA330E9" FromRole="Orders" ToRole="UserDetails" />
+    <Property Name="limitPrice" Type="Int32" />
+    <Property Name="accountType" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Portfolio">
+    <Key>
+      <PropertyRef Name="portfolioId" />
+    </Key>
+    <Property Name="portfolioId" Type="Int32" Nullable="false" />
+    <Property Name="portfolioName" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="userName" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="type" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="description" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Orders" Relationship="Self.FK__Orders__portfoli__0F975522" FromRole="Portfolio" ToRole="Orders" />
+    <NavigationProperty Name="UserDetail" Relationship="Self.FK__Portfolio__userN__09DE7BCC" FromRole="Portfolio" ToRole="UserDetails" />
+  </EntityType>
+  <EntityType Name="UserDetail">
+    <Key>
+      <PropertyRef Name="userName" />
+    </Key>
+    <Property Name="userName" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="password" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="role" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="displayName" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="pmLoginStatus" Type="Boolean" />
+    <Property Name="etLoginStatus" Type="Boolean" />
+    <Property Name="securityAnswer" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Blocks" Relationship="Self.FK__Block__userName__0AD2A005" FromRole="UserDetails" ToRole="Block" />
+    <NavigationProperty Name="Orders" Relationship="Self.FK__Orders__userName__0EA330E9" FromRole="UserDetails" ToRole="Orders" />
+    <NavigationProperty Name="Portfolios" Relationship="Self.FK__Portfolio__userN__09DE7BCC" FromRole="UserDetails" ToRole="Portfolio" />
+    <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="phone" Type="Int32" />
+    <Property Name="dob" Type="DateTime" Precision="0" />
+    <Property Name="active" Type="Boolean" />
+  </EntityType>
+  <Association Name="FK__Block__symbol__1367E606">
+    <End Role="Market" Type="Self.Market" Multiplicity="1" />
+    <End Role="Block" Type="Self.Block" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Market">
+        <PropertyRef Name="symbol" />
+      </Principal>
+      <Dependent Role="Block">
+        <PropertyRef Name="symbol" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Block__userName__0AD2A005">
+    <End Role="UserDetails" Type="Self.UserDetail" Multiplicity="1" />
+    <End Role="Block" Type="Self.Block" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserDetails">
+        <PropertyRef Name="userName" />
+      </Principal>
+      <Dependent Role="Block">
+        <PropertyRef Name="userName" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__OrderDeta__block__0BC6C43E">
+    <End Role="Block" Type="Self.Block" Multiplicity="1" />
+    <End Role="OrderDetails" Type="Self.OrderDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Block">
+        <PropertyRef Name="blockId" />
+      </Principal>
+      <Dependent Role="OrderDetails">
+        <PropertyRef Name="blockId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Orders__symbol__145C0A3F">
+    <End Role="Market" Type="Self.Market" Multiplicity="1" />
+    <End Role="Orders" Type="Self.Order" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Market">
+        <PropertyRef Name="symbol" />
+      </Principal>
+      <Dependent Role="Orders">
+        <PropertyRef Name="symbol" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__OrderDeta__order__108B795B">
+    <End Role="Orders" Type="Self.Order" Multiplicity="1" />
+    <End Role="OrderDetails" Type="Self.OrderDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Orders">
+        <PropertyRef Name="orderId" />
+      </Principal>
+      <Dependent Role="OrderDetails">
+        <PropertyRef Name="orderId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Orders__portfoli__0F975522">
+    <End Role="Portfolio" Type="Self.Portfolio" Multiplicity="1" />
+    <End Role="Orders" Type="Self.Order" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Portfolio">
+        <PropertyRef Name="portfolioId" />
+      </Principal>
+      <Dependent Role="Orders">
+        <PropertyRef Name="portfolioId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Orders__userName__0EA330E9">
+    <End Role="UserDetails" Type="Self.UserDetail" Multiplicity="1" />
+    <End Role="Orders" Type="Self.Order" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserDetails">
+        <PropertyRef Name="userName" />
+      </Principal>
+      <Dependent Role="Orders">
+        <PropertyRef Name="userName" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Portfolio__userN__09DE7BCC">
+    <End Role="UserDetails" Type="Self.UserDetail" Multiplicity="1" />
+    <End Role="Portfolio" Type="Self.Portfolio" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserDetails">
+        <PropertyRef Name="userName" />
+      </Principal>
+      <Dependent Role="Portfolio">
+        <PropertyRef Name="userName" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="StockStInternalEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Blocks" EntityType="Self.Block" />
+    <EntitySet Name="Markets" EntityType="Self.Market" />
+    <EntitySet Name="OrderDetails" EntityType="Self.OrderDetail" />
+    <EntitySet Name="Orders" EntityType="Self.Order" />
+    <EntitySet Name="Portfolios" EntityType="Self.Portfolio" />
+    <EntitySet Name="UserDetails" EntityType="Self.UserDetail" />
+    <AssociationSet Name="FK__Block__symbol__1367E606" Association="Self.FK__Block__symbol__1367E606">
+      <End Role="Market" EntitySet="Markets" />
+      <End Role="Block" EntitySet="Blocks" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Block__userName__0AD2A005" Association="Self.FK__Block__userName__0AD2A005">
+      <End Role="UserDetails" EntitySet="UserDetails" />
+      <End Role="Block" EntitySet="Blocks" />
+    </AssociationSet>
+    <AssociationSet Name="FK__OrderDeta__block__0BC6C43E" Association="Self.FK__OrderDeta__block__0BC6C43E">
+      <End Role="Block" EntitySet="Blocks" />
+      <End Role="OrderDetails" EntitySet="OrderDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Orders__symbol__145C0A3F" Association="Self.FK__Orders__symbol__145C0A3F">
+      <End Role="Market" EntitySet="Markets" />
+      <End Role="Orders" EntitySet="Orders" />
+    </AssociationSet>
+    <AssociationSet Name="FK__OrderDeta__order__108B795B" Association="Self.FK__OrderDeta__order__108B795B">
+      <End Role="Orders" EntitySet="Orders" />
+      <End Role="OrderDetails" EntitySet="OrderDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Orders__portfoli__0F975522" Association="Self.FK__Orders__portfoli__0F975522">
+      <End Role="Portfolio" EntitySet="Portfolios" />
+      <End Role="Orders" EntitySet="Orders" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Orders__userName__0EA330E9" Association="Self.FK__Orders__userName__0EA330E9">
+      <End Role="UserDetails" EntitySet="UserDetails" />
+      <End Role="Orders" EntitySet="Orders" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Portfolio__userN__09DE7BCC" Association="Self.FK__Portfolio__userN__09DE7BCC">
+      <End Role="UserDetails" EntitySet="UserDetails" />
+      <End Role="Portfolio" EntitySet="Portfolios" />
+    </AssociationSet>
+    <!--<EntitySet Name="sysdiagrams" EntityType="StockStInternalModel.sysdiagram" />-->
+    <EntitySet Name="Feedbacks" EntityType="StockStInternalModel.Feedback" />
+  </EntityContainer>
+  <!--<EntityType Name="sysdiagram">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>-->
+  <EntityType Name="Feedback">
+    <Key>
+      <PropertyRef Name="feedbackId" />
+    </Key>
+    <Property Name="feedbackId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="email" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="timestamp" Type="DateTime" Precision="3" />
+    <Property Name="message" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+  </EntityType>
+</Schema>

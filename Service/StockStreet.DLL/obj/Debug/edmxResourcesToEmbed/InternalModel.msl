@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="StockStInternalModelStoreContainer" CdmEntityContainer="StockStInternalEntities">
+    <EntitySetMapping Name="Blocks">
+      <EntityTypeMapping TypeName="StockStInternalModel.Block">
+        <MappingFragment StoreEntitySet="Block">
+          <ScalarProperty Name="orderType" ColumnName="orderType" />
+          <ScalarProperty Name="blockId" ColumnName="blockId" />
+          <ScalarProperty Name="userName" ColumnName="userName" />
+          <ScalarProperty Name="symbol" ColumnName="symbol" />
+          <ScalarProperty Name="side" ColumnName="side" />
+          <ScalarProperty Name="price" ColumnName="price" />
+          <ScalarProperty Name="stopPrice" ColumnName="stopPrice" />
+          <ScalarProperty Name="totalQuantity" ColumnName="totalQuantity" />
+          <ScalarProperty Name="openQuantity" ColumnName="openQuantity" />
+          <ScalarProperty Name="executedQuantity" ColumnName="executedQuantity" />
+          <ScalarProperty Name="blockStatus" ColumnName="blockStatus" />
+          <ScalarProperty Name="createTStamp" ColumnName="createTStamp" />
+          <ScalarProperty Name="updatedTStamp" ColumnName="updatedTStamp" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Markets">
+      <EntityTypeMapping TypeName="StockStInternalModel.Market">
+        <MappingFragment StoreEntitySet="Market">
+          <ScalarProperty Name="symbol" ColumnName="symbol" />
+          <ScalarProperty Name="stockName" ColumnName="stockName" />
+          <ScalarProperty Name="marketPrice" ColumnName="marketPrice" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OrderDetails">
+      <EntityTypeMapping TypeName="StockStInternalModel.OrderDetail">
+        <MappingFragment StoreEntitySet="OrderDetails">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="blockId" ColumnName="blockId" />
+          <ScalarProperty Name="orderId" ColumnName="orderId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Orders">
+      <EntityTypeMapping TypeName="StockStInternalModel.Order">
+        <MappingFragment StoreEntitySet="Orders">
+          <ScalarProperty Name="accountType" ColumnName="accountType" />
+          <ScalarProperty Name="limitPrice" ColumnName="limitPrice" />
+          <ScalarProperty Name="orderId" ColumnName="orderId" />
+          <ScalarProperty Name="orderStatus" ColumnName="orderStatus" />
+          <ScalarProperty Name="symbol" ColumnName="symbol" />
+          <ScalarProperty Name="side" ColumnName="side" />
+          <ScalarProperty Name="orderType" ColumnName="orderType" />
+          <ScalarProperty Name="orderQualifier" ColumnName="orderQualifier" />
+          <ScalarProperty Name="userName" ColumnName="userName" />
+          <ScalarProperty Name="portfolioId" ColumnName="portfolioId" />
+          <ScalarProperty Name="price" ColumnName="price" />
+          <ScalarProperty Name="stopPrice" ColumnName="stopPrice" />
+          <ScalarProperty Name="totalQuantity" ColumnName="totalQuantity" />
+          <ScalarProperty Name="openQuantity" ColumnName="openQuantity" />
+          <ScalarProperty Name="executedQuantity" ColumnName="executedQuantity" />
+          <ScalarProperty Name="notes" ColumnName="notes" />
+          <ScalarProperty Name="createTStamp" ColumnName="createTStamp" />
+          <ScalarProperty Name="updatedTStamp" ColumnName="updatedTStamp" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Portfolios">
+      <EntityTypeMapping TypeName="StockStInternalModel.Portfolio">
+        <MappingFragment StoreEntitySet="Portfolio">
+          <ScalarProperty Name="portfolioId" ColumnName="portfolioId" />
+          <ScalarProperty Name="portfolioName" ColumnName="portfolioName" />
+          <ScalarProperty Name="userName" ColumnName="userName" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="description" ColumnName="description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserDetails">
+      <EntityTypeMapping TypeName="StockStInternalModel.UserDetail">
+        <MappingFragment StoreEntitySet="UserDetails">
+          <ScalarProperty Name="active" ColumnName="active" />
+          <ScalarProperty Name="dob" ColumnName="dob" />
+          <ScalarProperty Name="phone" ColumnName="phone" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="userName" ColumnName="userName" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="role" ColumnName="role" />
+          <ScalarProperty Name="displayName" ColumnName="displayName" />
+          <ScalarProperty Name="pmLoginStatus" ColumnName="pmLoginStatus" />
+          <ScalarProperty Name="etLoginStatus" ColumnName="etLoginStatus" />
+          <ScalarProperty Name="securityAnswer" ColumnName="securityAnswer" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Feedbacks">
+      <EntityTypeMapping TypeName="StockStInternalModel.Feedback">
+        <MappingFragment StoreEntitySet="Feedback">
+          <ScalarProperty Name="message" ColumnName="message" />
+          <ScalarProperty Name="timestamp" ColumnName="timestamp" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="feedbackId" ColumnName="feedbackId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

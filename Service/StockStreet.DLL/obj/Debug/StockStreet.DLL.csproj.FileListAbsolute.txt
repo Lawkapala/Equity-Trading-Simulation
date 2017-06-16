@@ -1,0 +1,20 @@
+C:\Users\PRIYANSHI GUPTA\Desktop\SSS\Service\StockStreet.DLL\bin\Debug\StockStreet.DLL.dll.config
+C:\Users\PRIYANSHI GUPTA\Desktop\SSS\Service\StockStreet.DLL\bin\Debug\StockStreet.DLL.dll
+C:\Users\PRIYANSHI GUPTA\Desktop\SSS\Service\StockStreet.DLL\bin\Debug\StockStreet.DLL.pdb
+C:\Users\PRIYANSHI GUPTA\Desktop\SSS\Service\StockStreet.DLL\bin\Debug\EntityFramework.dll
+C:\Users\PRIYANSHI GUPTA\Desktop\SSS\Service\StockStreet.DLL\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\PRIYANSHI GUPTA\Desktop\SSS\Service\StockStreet.DLL\bin\Debug\EntityFramework.xml
+C:\Users\PRIYANSHI GUPTA\Desktop\SSS\Service\StockStreet.DLL\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\PRIYANSHI GUPTA\Desktop\SSS\Service\StockStreet.DLL\obj\Debug\StockStreet.DLL.dll
+C:\Users\PRIYANSHI GUPTA\Desktop\SSS\Service\StockStreet.DLL\obj\Debug\StockStreet.DLL.pdb
+C:\Users\PRIYANSHI GUPTA\Desktop\SSS\Service\StockStreet.DLL\obj\Debug\StockStreet.DLL.csprojResolveAssemblyReference.cache
+C:\Users\Niket Raj\Desktop\Mock\NIKet SSS\Service\StockStreet.DLL\bin\Debug\StockStreet.DLL.dll.config
+C:\Users\Niket Raj\Desktop\Mock\NIKet SSS\Service\StockStreet.DLL\bin\Debug\StockStreet.DLL.dll
+C:\Users\Niket Raj\Desktop\Mock\NIKet SSS\Service\StockStreet.DLL\bin\Debug\StockStreet.DLL.pdb
+C:\Users\Niket Raj\Desktop\Mock\NIKet SSS\Service\StockStreet.DLL\bin\Debug\EntityFramework.dll
+C:\Users\Niket Raj\Desktop\Mock\NIKet SSS\Service\StockStreet.DLL\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Niket Raj\Desktop\Mock\NIKet SSS\Service\StockStreet.DLL\bin\Debug\EntityFramework.xml
+C:\Users\Niket Raj\Desktop\Mock\NIKet SSS\Service\StockStreet.DLL\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Niket Raj\Desktop\Mock\NIKet SSS\Service\StockStreet.DLL\obj\Debug\StockStreet.DLL.csprojResolveAssemblyReference.cache
+C:\Users\Niket Raj\Desktop\Mock\NIKet SSS\Service\StockStreet.DLL\obj\Debug\StockStreet.DLL.dll
+C:\Users\Niket Raj\Desktop\Mock\NIKet SSS\Service\StockStreet.DLL\obj\Debug\StockStreet.DLL.pdb

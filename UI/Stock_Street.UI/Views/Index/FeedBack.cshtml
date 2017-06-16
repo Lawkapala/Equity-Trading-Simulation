@@ -1,0 +1,150 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Contact</title>
+    <link href="/Content/css/style.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="/Content/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Roboto:500,900italic,900,400italic,100,700italic,300,700,500italic,100italic,300italic,400' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Quicksand:300,400,700' rel='stylesheet' type='text/css'>
+    <!-- js -->
+    <link rel="shortcut icon" href="/Content/images/logoTitle.png">
+
+    @Html.Partial("~/Views/Shared/TitleLogo.cshtml")
+    <script src="/Content/js/jquery.min.js"></script>
+    <!-- //js -->
+    <!-- for-mobile-apps -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="Merchandising Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template,
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+    <script type="application/x-javascript">
+        addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+               function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <!-- //for-mobile-apps -->
+    <!-- start-smoth-scrolling -->
+    <script type="text/javascript" src="/Content/js/move-top.js"></script>
+    <script type="text/javascript" src="/Content/js/easing.js"></script>
+    <script type="text/javascript">
+	jQuery(document).ready(function($) {
+		$(".scroll").click(function(event){
+			event.preventDefault();
+			$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+		});
+	});
+    </script>
+    <!-- start-smoth-scrolling -->
+    <!--animated-css-->
+    <link href="/Content/css/animate.css" rel="stylesheet" type="text/css" media="all">
+    <script src="/Content/js/wow.min.js"></script>
+    <script>
+ new WOW().init();
+    </script>
+    <!--/animated-css-->
+</head>
+
+<body ng-app="RootApp">
+    <div class="header-nav">
+        <div class="container">
+            <div class="logo wow fadeInLeft" data-wow-delay="0.5s">
+                <a href="http://localhost:35986">
+                    <img src="/Content/images/logoSS.png" height="50" width="150" alt="" />
+                </a>
+            </div>
+            <div class="logo-right">
+                <span class="menu"><img src="/Content/images/menu.png" alt="" /></span>
+                <ul class="nav1">
+                    <li><a href="http://localhost:35986">Home</a></li>
+                </ul>
+            </div>
+            <div class="clearfix"> </div>
+            <!-- script for menu -->
+            <script>
+
+						$( "span.menu" ).click(function() {
+						$( "ul.nav1" ).slideToggle( 300, function() {
+						 // Animation complete.
+						});
+						});
+            </script>
+            <!-- //script for menu -->
+        </div>
+    </div>
+    <div class="login-form wow fadeInUp" data-wow-delay="0.5s">
+        <div class="container">
+            <div class="login-form-info">
+                <div class="login-header">
+                    <div class="login-header-left">
+                        <h3>Give Your Feedback</h3>
+                    </div>
+                    <div class="clearfix"> </div>
+                </div>
+                <form method="put" ng-app="LoginApp" ng-controller="FeedBackController"
+                      enctype="application/x-www-form-urlencoded">                    
+                    <div class="sign-u">
+                        <div class="sign-up1">
+                            <h4>&nbsp; Email:</h4>
+                        </div>
+                        <div class="sign-up2" style="margin-right:10px;">
+
+                            <input type="text" placeholder="" required ng-model="data.email"/>
+
+                        </div>
+                        <div class="clearfix"> </div>
+                    </div>
+                    <div class="sign-u">
+                        <div class="sign-up1">
+                            <h4>&nbsp; Message:</h4>
+                        </div>
+                        <div class="sign-up2" style="margin-right:10px;">
+
+                            <textarea cols="56" rows="5" ng-model="data.message"></textarea>
+
+                        </div>
+                        <div class="clearfix"> </div>
+                    </div>
+                    <br />
+
+                    <center>
+                        <input type="submit" value="SUBMIT" style="width:35%;" ng-click="SendFeedBack(data)">
+                    </center>
+                    <p class="for"><a href="javascript:history.back()">Back</a></p>
+                </form>
+
+</div>
+
+        </div>
+    </div>
+    <br><br><br><br><br>
+    <br><br><br><br><br>
+    <br><br><br><br><br>
+    <br><br><br>
+    <!-- footer -->
+    <div class="footer">
+        <div class="container">
+            <p><small>&copy; Copyright 2017, Sapient Corporation</small></p>
+            <p>Design by<a href="https://www.sapientglobalmarkets.com"> GMI 2017 Batch</a></p>
+        </div>
+    </div>
+    <!-- //footer -->
+    <!-- here stars scrolling icon -->
+    <script type="text/javascript">
+									$(document).ready(function() {
+										/*
+										var defaults = {
+								  			containerID: 'toTop', // fading element id
+											containerHoverID: 'toTopHover', // fading element hover id
+											scrollSpeed: 1200,
+											easingType: 'linear'
+								 		};
+										*/
+
+										$().UItoTop({ easingType: 'easeOutQuart' });
+
+									});
+    </script>
+    <!-- //here ends scrolling icon -->
+
+
+</body>
+</html>

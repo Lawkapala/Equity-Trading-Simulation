@@ -1,0 +1,200 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="StockStInternalModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Block">
+    <Key>
+      <PropertyRef Name="blockId" />
+    </Key>
+    <Property Name="blockId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="userName" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="symbol" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="side" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="price" Type="decimal" Precision="10" Scale="4" Nullable="false" />
+    <Property Name="stopPrice" Type="decimal" Precision="10" Scale="4" />
+    <Property Name="orderType" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="totalQuantity" Type="int" Nullable="false" />
+    <Property Name="openQuantity" Type="int" />
+    <Property Name="executedQuantity" Type="int" />
+    <Property Name="blockStatus" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="createTStamp" Type="datetime" />
+    <Property Name="updatedTStamp" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Feedback">
+    <Key>
+      <PropertyRef Name="feedbackId" />
+    </Key>
+    <Property Name="feedbackId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="email" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="timestamp" Type="datetime" />
+    <Property Name="message" Type="varchar" MaxLength="500" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Market">
+    <Key>
+      <PropertyRef Name="symbol" />
+    </Key>
+    <Property Name="symbol" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="stockName" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="marketPrice" Type="decimal" Precision="10" Scale="4" Nullable="false" />
+  </EntityType>
+  <EntityType Name="OrderDetails">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="blockId" Type="int" Nullable="false" />
+    <Property Name="orderId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Orders">
+    <Key>
+      <PropertyRef Name="orderId" />
+    </Key>
+    <Property Name="orderId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="orderStatus" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="symbol" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="side" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="orderType" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="orderQualifier" Type="varchar" MaxLength="5" Nullable="false" />
+    <Property Name="userName" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="portfolioId" Type="int" Nullable="false" />
+    <Property Name="price" Type="decimal" Precision="10" Scale="4" Nullable="false" />
+    <Property Name="stopPrice" Type="decimal" Precision="10" Scale="4" />
+    <Property Name="totalQuantity" Type="int" Nullable="false" />
+    <Property Name="openQuantity" Type="int" />
+    <Property Name="executedQuantity" Type="int" />
+    <Property Name="notes" Type="varchar" MaxLength="50" />
+    <Property Name="createTStamp" Type="datetime" />
+    <Property Name="updatedTStamp" Type="datetime" />
+    <Property Name="limitPrice" Type="int" />
+    <Property Name="accountType" Type="varchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="Portfolio">
+    <Key>
+      <PropertyRef Name="portfolioId" />
+    </Key>
+    <Property Name="portfolioId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="portfolioName" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="userName" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="type" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="description" Type="varchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="UserDetails">
+    <Key>
+      <PropertyRef Name="userName" />
+    </Key>
+    <Property Name="userName" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="password" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="role" Type="varchar" MaxLength="5" Nullable="false" />
+    <Property Name="displayName" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="pmLoginStatus" Type="bit" />
+    <Property Name="etLoginStatus" Type="bit" />
+    <Property Name="securityAnswer" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="email" Type="varchar" MaxLength="50" />
+    <Property Name="phone" Type="int" />
+    <Property Name="dob" Type="date" />
+    <Property Name="active" Type="bit" />
+  </EntityType>
+  <Association Name="FK__Block__userName__0AD2A005">
+    <End Role="UserDetails" Type="Self.UserDetails" Multiplicity="1" />
+    <End Role="Block" Type="Self.Block" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserDetails">
+        <PropertyRef Name="userName" />
+      </Principal>
+      <Dependent Role="Block">
+        <PropertyRef Name="userName" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__OrderDeta__block__0BC6C43E">
+    <End Role="Block" Type="Self.Block" Multiplicity="1" />
+    <End Role="OrderDetails" Type="Self.OrderDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Block">
+        <PropertyRef Name="blockId" />
+      </Principal>
+      <Dependent Role="OrderDetails">
+        <PropertyRef Name="blockId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__OrderDeta__order__108B795B">
+    <End Role="Orders" Type="Self.Orders" Multiplicity="1" />
+    <End Role="OrderDetails" Type="Self.OrderDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Orders">
+        <PropertyRef Name="orderId" />
+      </Principal>
+      <Dependent Role="OrderDetails">
+        <PropertyRef Name="orderId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Orders__portfoli__0F975522">
+    <End Role="Portfolio" Type="Self.Portfolio" Multiplicity="1" />
+    <End Role="Orders" Type="Self.Orders" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Portfolio">
+        <PropertyRef Name="portfolioId" />
+      </Principal>
+      <Dependent Role="Orders">
+        <PropertyRef Name="portfolioId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Orders__userName__0EA330E9">
+    <End Role="UserDetails" Type="Self.UserDetails" Multiplicity="1" />
+    <End Role="Orders" Type="Self.Orders" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserDetails">
+        <PropertyRef Name="userName" />
+      </Principal>
+      <Dependent Role="Orders">
+        <PropertyRef Name="userName" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Portfolio__userN__09DE7BCC">
+    <End Role="UserDetails" Type="Self.UserDetails" Multiplicity="1" />
+    <End Role="Portfolio" Type="Self.Portfolio" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserDetails">
+        <PropertyRef Name="userName" />
+      </Principal>
+      <Dependent Role="Portfolio">
+        <PropertyRef Name="userName" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="StockStInternalModelStoreContainer">
+    <EntitySet Name="Block" EntityType="Self.Block" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Feedback" EntityType="Self.Feedback" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Market" EntityType="Self.Market" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="OrderDetails" EntityType="Self.OrderDetails" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Orders" EntityType="Self.Orders" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Portfolio" EntityType="Self.Portfolio" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UserDetails" EntityType="Self.UserDetails" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__Block__userName__0AD2A005" Association="Self.FK__Block__userName__0AD2A005">
+      <End Role="UserDetails" EntitySet="UserDetails" />
+      <End Role="Block" EntitySet="Block" />
+    </AssociationSet>
+    <AssociationSet Name="FK__OrderDeta__block__0BC6C43E" Association="Self.FK__OrderDeta__block__0BC6C43E">
+      <End Role="Block" EntitySet="Block" />
+      <End Role="OrderDetails" EntitySet="OrderDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK__OrderDeta__order__108B795B" Association="Self.FK__OrderDeta__order__108B795B">
+      <End Role="Orders" EntitySet="Orders" />
+      <End Role="OrderDetails" EntitySet="OrderDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Orders__portfoli__0F975522" Association="Self.FK__Orders__portfoli__0F975522">
+      <End Role="Portfolio" EntitySet="Portfolio" />
+      <End Role="Orders" EntitySet="Orders" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Orders__userName__0EA330E9" Association="Self.FK__Orders__userName__0EA330E9">
+      <End Role="UserDetails" EntitySet="UserDetails" />
+      <End Role="Orders" EntitySet="Orders" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Portfolio__userN__09DE7BCC" Association="Self.FK__Portfolio__userN__09DE7BCC">
+      <End Role="UserDetails" EntitySet="UserDetails" />
+      <End Role="Portfolio" EntitySet="Portfolio" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

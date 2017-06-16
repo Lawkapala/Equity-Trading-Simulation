@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="StockStreet.DLL.RepositoryClass.Broker&lt;TEntity&gt;" Collapsed="true">
+    <Position X="3.75" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAACAAAAAAAEAAAAAAAAAAAAAAAMAAAAEACIAA=</HashCode>
+      <FileName>RepositoryClass\Broker.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="StockStreet.DLL.RepositoryClass.BrokerSystem" Collapsed="true">
+    <Position X="10.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAiAAABBAAAAAQIAAAAAABAAAAAAAAAAAAAAAAAABA=</HashCode>
+      <FileName>RepositoryClass\BrokerSystem.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StockStreet.DLL.RepositoryClass.CompareByTime" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="12.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAA=</HashCode>
+      <FileName>RepositoryClass\CompareByTime.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="StockStreet.DLL.RepositoryClass.Login" Collapsed="true">
+    <Position X="10.75" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACCBAAAAiAAAAAAAAAAAAAQAAAAAIAAAAACAAAA=</HashCode>
+      <FileName>RepositoryClass\Login.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StockStreet.DLL.RepositoryClass.PortfolioManager" Collapsed="true">
+    <Position X="8.25" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAAAAQEAAAAAQAAAAAAAAAAAAAgEAAACEAAAA=</HashCode>
+      <FileName>RepositoryClass\PortfolioManager.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="StockStreet.DLL.RepositoryClass.Repository&lt;TEntity&gt;" Collapsed="true">
+    <Position X="6" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAgAAAABAAAAABAAAAAAIAAACAgAAAIAAAAA=</HashCode>
+      <FileName>RepositoryClass\Repository.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="StockStreet.DLL.RepositoryClass.Trader&lt;TEntity&gt;" Collapsed="true">
+    <Position X="6" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAABAAAAAAAAAAAAAAAAIAAAAAIAAAAACAAAQ=</HashCode>
+      <FileName>RepositoryClass\Trader.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Interface Name="StockStreet.DLL.RepositoryInterface.IPortfolioManager" Collapsed="true">
+    <Position X="3.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAAAAAEAAAAAQAAAAAAAAAAAAAAEAAACEAAAA=</HashCode>
+      <FileName>RepositoryInterface\IPortfolioManager.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="StockStreet.DLL.RepositoryInterface.IRepository&lt;TEntity&gt;" Collapsed="true">
+    <Position X="6" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAAAABAAAAABAAAAAAIAAACAgAAAIAAAAA=</HashCode>
+      <FileName>RepositoryInterface\IRepository.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="StockStreet.DLL.RepositoryInterface.ITrader&lt;TEntity&gt;" Collapsed="true">
+    <Position X="6" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAA=</HashCode>
+      <FileName>RepositoryInterface\ITrader.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="StockStreet.DLL.RepositoryInterface.IBroker&lt;TEntity&gt;">
+    <Position X="8.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAACAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>RepositoryInterface\IBroker.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Tahoma" Size="8.25" />
+</ClassDiagram>

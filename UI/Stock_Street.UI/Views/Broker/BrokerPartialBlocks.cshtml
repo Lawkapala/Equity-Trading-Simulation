@@ -1,0 +1,213 @@
+﻿
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="ThemeBucket">
+    <link rel="shortcut icon" href="images/favicon.png">
+
+    <title>Partial Blocks</title>
+
+    <!--Core CSS -->
+    <link href="~/Content/side-bar/bs3/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/side-bar/css/bootstrap-reset.css" rel="stylesheet" />
+    <link href="~/Content/side-bar/font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <link href="~/Content/side-bar/js/data-tables/DT_bootstrap.css" rel="stylesheet" />
+    @Html.Partial("~/Views/Shared/TitleLogo.cshtml")
+
+    <!-- Custom styles for this template -->
+    <link href="~/Content/side-bar/css/style.css" rel="stylesheet" />
+    <link href="~/Content/side-bar/css/style-responsive.css" rel="stylesheet" />
+
+    <!-- Just for debugging purposes. Don't actually copy this line! -->
+    <!--[if lt IE 9]>
+    <script src="js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+
+
+
+
+
+</head>
+
+<body ng-app="RootApp">
+
+    <section id="container">
+        <!--header start-->        
+        <!--header end-->
+        <div id="login-container">@Html.Partial("~/Views/Shared/BrokerPartial.cshtml")</div>
+        <!-- sidebar menu end-->
+        <!--sidebar end-->
+        <!--main content start-->
+        <div class="test">
+            <section id="main-content">
+                <div id="br-container" ng-app="ApiApp" ng-controller="PartialController">
+                    <section class="wrapper">
+                        <!-- page start-->
+
+                        <div class="row" style="z-index:0;">
+                            <div class="col-sm-12">
+                                <section class="panel">
+                                    <header class="panel-heading">
+                                        Partial Blocks
+                                    </header>
+                                    <div class="panel-body" style="background-color:#f1f2f7">
+                                        <div>
+                                            <div class="clearfix">
+
+                                                <div class="btn-group pull-right">
+
+                                                    <ul class="dropdown-menu pull-right">
+                                                        <li><a href="#">Print</a></li>
+                                                        <li><a href="#">Save as PDF</a></li>
+                                                        <li><a href="#">Export to Excel</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="space15"></div>
+                                            <div ng-controller="PartialController">
+                                                <table class="table table-striped table-hover table-bordered">
+                                                    <thead>
+                                                        <tr>
+
+                                                            @*<th>Block ID</th>*@
+                                                            <th>Trader ID</th>
+                                                            <th>Symbol</th>
+                                                            <th>Buy/Sell</th>
+                                                            <th>Price</th>
+                                                            <th>Stop Price</th>
+                                                            <th>Total Quantity</th>
+                                                            <th>Open Quantity</th>
+                                                            <th>Executed Quantity</th>
+                                                            <th>Time Stamp</th>
+                                                            <th>Updated Time Stamp</th>
+                                                            <th>Block Status</th>
+                                                            <th>Detail History</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr ng-repeat="block in partial" class="">
+                                                            @*<td>{{block.blockId}}</td>*@
+                                                            <td>{{block.userName}}</td>
+                                                            <td>{{block.symbol}}</td>
+                                                            <td>{{block.side}}</td>
+                                                            <td>{{block.price}}</td>
+                                                            <td>{{block.stopPrice}}</td>
+                                                            <td>{{block.totalQuantity}}</td>
+                                                            <td>{{block.openQuantity}}</td>
+                                                            <td>{{block.executedQuantity}}</td>
+                                                            <td>{{block.createTStamp}}</td>
+                                                            <td>{{block.updatedTStamp}}</td>
+                                                            <td>{{block.blockStatus}}</td>
+                                                            <td> <button type="button" class="btn btn-primary btn-xs" data-toggle="modal" data-target="#myModal" ng-click="detailHistory(block.blockId)">Show </button></td>
+
+                                                        </tr>
+
+                                                    </tbody>
+                                                </table>
+                                                <div class="modal fade" id="myModal" role="dialog">
+                                                    <div class="modal-dialog">
+
+                                                        <!-- Modal content-->
+                                                        <div class="modal-content">
+                                                            <div class="modal-header">
+                                                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                                <h4 class="modal-title">Detail History</h4>
+                                                            </div>
+                                                            <div>
+                                                                <table class="table table-striped table-hover table-bordered">
+                                                                    <thead>
+                                                                        <tr>
+
+                                                                            <th>Symbol</th>
+                                                                            <th>Traded Quantity</th>
+                                                                            <th>Trade Price</th>
+                                                                            <th>Remaining Order Quantity</th>
+                                                                            <th>Time Stamp</th>
+                                                                            <th>Status</th>
+                                                                        </tr>
+                                                                    </thead>
+                                                                    <tbody>
+                                                                        <tr ng-repeat="block in PartialData" class="">
+
+                                                                            <td>{{block.symbol}}</td>
+                                                                            <td>{{block.tradedQuantity}}</td>
+                                                                            <td>{{block.tradePrice}}</td>
+                                                                            <td>{{block.remainingOrderQuantity}}</td>
+                                                                            <td>{{block.timestamp}}</td>
+                                                                            <td>{{block.status}}</td>
+
+                                                                            @* <td> <button type="button" class="btn btn-primary btn-xs" data-toggle="modal" data-target="#myModal">Show </button></td>*@
+                                                                        </tr>
+
+                                                                    </tbody>
+                                                                </table>
+                                                            </div>
+                                                            <div class="modal-footer">
+                                                                <button type="button" class="btn btn-primary" data-dismiss="modal">Close <i class="fa fa-times"></i></button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+
+
+
+
+
+                                    </div>
+                                </section>
+                            </div>
+                        </div>
+
+                        <!-- page end-->
+                    </section>
+                </div>
+            </section>
+        </div>
+        <!--main content end-->
+        <!--right sidebar start-->
+        <div class="right-sidebar">
+            <div class="right-stat-bar">
+            </div>
+        </div>
+        <!--right sidebar end-->
+
+    </section>
+
+    <!-- Placed js at the end of the document so the pages load faster -->
+    <!--Core js-->
+    <!---->
+    <script src="~/Content/side-bar/js/jquery-1.8.3.min.js"></script>
+    <script src="~/Content/side-bar/bs3/js/bootstrap.min.js"></script>
+    <script class="include" type="text/javascript" src="~/Content/side-bar/js/jquery.dcjqaccordion.2.7.js"></script>
+    <script src="~/Content/side-bar/js/jquery.scrollTo.min.js"></script>
+    <script src="~/Content/side-bar/js/jQuery-slimScroll-1.3.0/jquery.slimscroll.js"></script>
+    <script src="~/Content/side-bar/js/jquery.nicescroll.js"></script>
+    <!--Easy Pie Chart-->
+    <script src="~/Content/side-bar/js/easypiechart/jquery.easypiechart.js"></script>
+    <!--Sparkline Chart-->
+    <script src="~/Content/side-bar/js/sparkline/jquery.sparkline.js"></script>
+    <!--jQuery Flot Chart-->
+    <script type="text/javascript" src="~/Content/side-bar/js/data-tables/jquery.dataTables.js"></script>
+    <script type="text/javascript" src="~/Content/side-bar/js/data-tables/DT_bootstrap.js"></script>
+
+    <!--common script init for all pages-->
+    <script src="~/Content/side-bar/js/scripts.js"></script>
+
+    <!--script for this page only-->
+    <!-- END JAVASCRIPTS -->
+
+
+</body>
+</html>

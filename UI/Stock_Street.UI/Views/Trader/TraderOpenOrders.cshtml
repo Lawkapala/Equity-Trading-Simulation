@@ -1,0 +1,166 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="ThemeBucket">
+
+
+
+    @Html.Partial("~/Views/Shared/TitleLogo.cshtml")
+
+
+    <link rel="shortcut icon" href="images/favicon.png">
+
+    <title>Open Orders</title>
+
+    <!--Core CSS -->
+    <link href="/Content/side-bar/bs3/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="/Content/side-bar/css/bootstrap-reset.css" rel="stylesheet" />
+    <link href="/Content/side-bar/font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <link href="/Content/side-bar/js/data-tables/DT_bootstrap.css" rel="stylesheet" />
+
+    <!-- Custom styles for this template -->
+    <link href="/Content/side-bar/css/style.css" rel="stylesheet" />
+    <link href="/Content/side-bar/css/style-responsive.css" rel="stylesheet" />
+
+    <!--Core js-->
+    <script src="/Content/side-bar/js/jquery-1.8.3.min.js"></script>
+    <script src="/Content/side-bar/bs3/js/bootstrap.min.js"></script>
+    <script class="include" type="text/javascript" src="/Content/side-bar/js/jquery.dcjqaccordion.2.7.js"></script>
+    <script src="/Content/side-bar/js/jquery.scrollTo.min.js"></script>
+    <script src="/Content/side-bar/js/jQuery-slimScroll-1.3.0/jquery.slimscroll.js"></script>
+    <script src="/Content/side-bar/js/jquery.nicescroll.js"></script>
+    <!--Easy Pie Chart-->
+    <script src="/Content/side-bar/js/easypiechart/jquery.easypiechart.js"></script>
+    <!--Sparkline Chart-->
+    <script src="/Content/side-bar/js/sparkline/jquery.sparkline.js"></script>
+
+
+    <script type="text/javascript" src="/Content/side-bar/js/data-tables/jquery.dataTables.js"></script>
+    <script type="text/javascript" src="/Content/side-bar/js/data-tables/DT_bootstrap.js"></script>
+
+    <!--common script init for all pages-->
+    <script src="/Content/side-bar/js/scripts.js"></script>
+
+    <!--script for this page only-->
+    
+    <!-- END JAVASCRIPTS -->
+     
+
+
+
+</head>
+
+<body ng-app="RootApp">
+
+    <section id="container">
+        <!--header start-->
+
+        <div id="login-container">@Html.Partial("~/Views/Shared/TraderPartial.cshtml")</div> 
+        <!--header end-->
+        <!-- sidebar menu end-->
+        <!--sidebar end-->
+        <!--main content start-->
+        <section id="main-content">
+            <div id="trader-content" ng-app="Open" ng-controller="OpenOrders">
+                <section class="wrapper">
+                    <!-- page start-->
+
+                    <div class="row" style="z-index:0;">
+                        <div class="col-sm-12">
+                            <section class="panel">
+                                <header class="panel-heading">
+                                    Open Orders
+                                </header>
+                                <div class="panel-body" style="background-color:#f1f2f7">
+                                    <div>
+                                        <div class="clearfix">
+                                            <div class="btn-group pull-right">
+
+                                                <ul class="dropdown-menu pull-right">
+                                                    <li><a href="#">Print</a></li>
+                                                    <li><a href="#">Save as PDF</a></li>
+                                                    <li><a href="#">Export to Excel</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="space15"></div>
+                                        <div>
+                                            <table class="table table-striped table-hover table-bordered">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Order ID</th>
+                                                        <th>Symbol</th>
+                                                        <th>Side</th>
+                                                        <th>Price</th>
+                                                        <th>Portfolio ID</th>
+                                                        <th>Total Quantity</th>
+                                                        <th>Open Quantity</th>
+                                                        <th>Executed Quantity</th>
+                                                        <th>Order Status</th>
+                                                        <th>Select</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr class="" ng-repeat="G in GetOrders">
+                                                        <td>{{G.orderId}}</td>
+                                                        <td>{{G.symbol}}</td>
+                                                        <td>{{G.side}}</td>
+                                                        <td>{{G.price}}</td>
+                                                        <td>{{G.portfolioId}}</td>
+                                                        <td>{{G.totalQuantity}}</td>
+                                                        <td>{{G.openQuantity}}</td>
+                                                        <td>{{G.executedQuantity}}</td>
+                                                        <td>{{G.orderStatus}}</td>
+                                                        <td><input ng-model="G.selected" type="checkbox" name="select" value="{{G.orderId}}" /></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <br />
+                                        <div class="col-lg-3">
+                                            <button class="btn btn-primary" ng-click="save()">
+                                                Add To New Block <i class="fa fa-plus"></i>
+                                            </button>
+                                        </div>
+                                        <div class="col-lg-3"></div>
+                                        <div class="col-lg-3">
+                                            <select class="form-control m-bot15" ng-model="selectedId" ng-options="data.symbol + ', ' +data.side+', ' + data.price + ', ' + data.orderType for data in blockData"></select>
+                                        </div>
+                                        <div style="float:right;">
+                                            <button class="btn btn-primary" ng-click="saveToBlock(selectedId.blockId)">
+                                                Add To Existing Block <i class="fa fa-check"></i>
+                                            </button>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+
+                    <!-- page end-->
+                </section>
+            </div>
+        </section>
+        <!--main content end-->
+        <!--right sidebar start-->
+        <div class="right-sidebar">
+            <div class="right-stat-bar">
+            </div>
+        </div>
+        <!--right sidebar end-->
+
+    </section>
+
+    <!-- Placed js at the end of the document so the pages load faster -->
+
+
+
+</body>
+</html>

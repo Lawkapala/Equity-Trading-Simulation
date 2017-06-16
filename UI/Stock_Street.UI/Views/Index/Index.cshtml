@@ -1,0 +1,264 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Stock Street</title>
+    <link href="~/Content/css/style.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="~/Content/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Roboto:500,900italic,900,400italic,100,700italic,300,700,500italic,100italic,300italic,400' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Quicksand:300,400,700' rel='stylesheet' type='text/css'>
+    <!-- js -->
+    @Html.Partial("~/Views/Shared/TitleLogo.cshtml")
+    <script src="~/Content/js/jquery.min.js"></script>
+    <!-- //js -->
+    <!-- for-mobile-apps -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="Merchandising Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template,
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+    <script type="application/x-javascript">
+        addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+               function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <!-- //for-mobile-apps -->
+    <!-- start-smoth-scrolling -->
+    <script type="text/javascript" src="~/Content/js/move-top.js"></script>
+    <script type="text/javascript" src="~/Content/js/easing.js"></script>
+    <script type="text/javascript">
+	jQuery(document).ready(function($) {
+		$(".scroll").click(function(event){
+			event.preventDefault();
+			$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+		});
+	});
+    </script>
+    <!-- start-smoth-scrolling -->
+    <!--animated-css-->
+    <link href="~/Content/css/animate.css" rel="stylesheet" type="text/css" media="all">
+    <script src="~/Content/js/wow.min.js"></script>
+    <script>
+ new WOW().init();
+    </script>
+    <!--/animated-css-->
+</head>
+
+<body>
+    <!-- header -->
+    <div class="header-nav">
+        <div class="container">
+            <div class="logo wow fadeInLeft" data-wow-delay="0.5s">
+                <a href="http://localhost:35986/"><img src="~/Content/images/logoSS.png" height="50" width="150" alt=" " /></a>
+            </div>
+            <div class="logo-right">
+                <span class="menu"><img src="~/Content/images/menu.png" alt="" /></span>
+                <ul class="nav1">
+                    <li><a href="http://localhost:35986/">Home</a></li>
+                    <li><a href="#about" class="scroll">About</a></li>
+                    <li><a href="#contact" class="scroll">Contact Us</a></li>
+                    <li><a href="http://localhost:35986/Index/Login">Sign in</a></li>
+                </ul>
+            </div>
+            <div class="clearfix"> </div>
+            <!-- script for menu -->
+            <script>
+
+						$( "span.menu" ).click(function() {
+						$( "ul.nav1" ).slideToggle( 300, function() {
+						 // Animation complete.
+						});
+						});
+            </script>
+            <!-- //script for menu -->
+        </div>
+    </div>   
+        <div class="header-info wow fadeInUp" style="background-color:whitesmoke" data-wow-delay="0.5s">
+            <div class="container">
+                <h3>Trading Made Easy</h3>
+                <p>
+                    Wake up. Trade. Make Money. Sleep. Repeat <br />
+                    Amateurs want to be right. Professionals want to make money.
+                </p>
+
+            </div>
+        </div>
+        <!-- //header-->
+        <!-- slider -->
+        <div class="banner-slider wow fadeInUp" data-wow-delay="0.5s">
+            <div class="container">
+                <!-- Slider-starts-Here -->
+                <script src="~/Content/js/responsiveslides.min.js"></script>
+                <script>
+                    // You can also use "$(window).load(function() {"
+                    $(function () {
+                        // Slideshow 4
+                        $("#slider3").responsiveSlides({
+                            auto: true,
+                            pager: false,
+                            nav: true,
+                            speed: 500,
+                            namespace: "callbacks",
+                            before: function () {
+                                $('.events').append("<li>before event fired.</li>");
+                            },
+                            after: function () {
+                                $('.events').append("<li>after event fired.</li>");
+                            }
+                        });
+
+                    });
+                </script>
+                <!--//End-slider-script -->
+                <div id="top" class="callbacks_container">
+                    <ul class="rslides" id="slider3">
+                        <li>
+                            <div class="slider-part">
+                                <div class="banner">
+                                    <img src="~/Content/images/1.png" alt="" />
+                                </div>
+                                <div class="banner-slider-info">
+                                    <h3>Invest Right, Sit Tight</h3>
+                                    <p>
+                                        Bullish or Bearish, just know it at the back of your hand.
+                                        <span>
+                                            Stock Street
+                                            opens you the window to a large world of stock trade at your comfort.
+                                        </span>
+                                    </p>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="slider-part">
+                                <div class="banner">
+                                    <img src="~/Content/images/2.png" alt=" " />
+                                </div>
+                                <div class="banner-slider-info">
+                                    <h3>Remember Time is Money</h3>
+                                    <p>
+                                        Stock Street platform provides an easy to use user interface
+                                        which helps you get the rope of trade.<span>
+                                            Don't give up for we shall
+                                            help you ride Rolls Royce down the Wall Street one day soon.
+                                        </span>
+                                    </p>
+                                    <div class="learn">
+                                        <a href="single.html">Learn More</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="slider-part">
+                                <div class="banner">
+                                    <img src="~/Content/images/3.png" alt="" />
+                                </div>
+                                <div class="banner-slider-info">
+                                    <h3>Invest Right, Sit Tight</h3>
+                                    <p>
+                                        Bullish or Bearish, just know it at the back of your hand.
+                                        <span>
+                                            Stock Street opens you the window to a large world of stock trade at your comfort.
+                                        </span>
+                                    </p>
+                                    <div class="learn">
+                                        <a href="single.html">Learn More</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="slider-part">
+                                <div class="banner">
+                                    <img src="~/Content/images/4.png" alt="" />
+                                </div>
+                                <div class="banner-slider-info">
+                                    <h3>Remember Time is Money</h3>
+                                    <p>
+                                        Stock Street platform provides an easy to use user interface
+                                        which helps you get the rope of trade.
+                                        <span>
+                                            Don't give up for we shall
+                                            help you ride Rolls Royce down the Wall Street one day soon.
+                                        </span>
+                                    </p>
+                                    <div class="learn">
+                                        <a href="single.html">Learn More</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- //slider -->
+        <!-- about -->
+        <div id="about" class="about">
+            <div class="container">
+                <div class="about-left wow fadeInLeft" data-wow-delay="0.5s">
+                    <h3>About</h3>
+                    <br />
+                    <p>
+                        <h4>
+                            <b>Are you looking for a profitable investment!!</b><br /><br />
+                            Hey! Stock Street is there for you with a powerful,user-friendly stock trading platform
+                            designed to provide everything you need for online trading.
+                            Just open and fund your account to start trading.
+                        </h4>
+                        <h4>
+                            Enjoy fast, intuitive navigation as you monitor your account at a glance, from balances and pending orders.
+                            Ready to trade? Screen stocks to fit your investment strategy.<br />
+                            Manage your own investments on your own time.
+                            Save time with quick-trade tools at no additional cost.
+                        </h4>
+                    </p>
+                </div>
+                <div class="about-right wow fadeInRight" data-wow-delay="0.5s">
+                    <img src="~/Content/images/1.jpg" alt=" " />
+                </div>
+                <div class="clearfix"> </div>
+
+            </div>
+        </div>
+        <div id="contact" class="contact wow fadeInUp" style="background-color:whitesmoke" data-wow-delay="0.5s">
+            <div class="container">
+                <h3 style="text-align:left;">Contact Us</h3>
+                <div class="map">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7775.743812965766!2d77.69519351120353!3d12.980043691326383!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae115237f9d927%3A0x2a9623c56e5d4a97!2sSapient+Bengaluru!5e0!3m2!1sen!2sin!4v1491543586878" frameborder="0" style="border:0"></iframe>
+                </div>
+                <h4><b>Email :</b></h4><h4>help@stockstreet.com</h4>
+                <h4><b>Phone :</b></h4><h4>999999999</h4>
+            </div>
+        </div>
+        <!-- //about -->
+        <!-- footer -->
+        <div class="footer">
+            <div class="container">
+                <p><small>&copy; Copyright 2017, Sapient Corporation</small></p>
+                <p>Design by<a href="https://www.sapientglobalmarkets.com"> GMI 2017 Batch</a></p>
+            </div>
+        </div>
+        <!-- //footer -->
+        <!-- here stars scrolling icon -->
+        <script type="text/javascript">
+            $(document).ready(function () {
+                /*
+                var defaults = {
+                    containerID: 'toTop', // fading element id
+                    containerHoverID: 'toTopHover', // fading element hover id
+                    scrollSpeed: 1200,
+                    easingType: 'linear'
+                };
+                */
+
+                $().UItoTop({ easingType: 'easeOutQuart' });
+
+            });
+        </script>
+        <!-- //here ends scrolling icon -->
+</body>
+</html>

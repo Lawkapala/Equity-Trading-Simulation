@@ -1,0 +1,98 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="ThemeBucket">
+    <link rel="shortcut icon" href="~/Content/side-bar/images/favicon.png">
+    <title>Trader</title>
+    <!--Core CSS -->
+    <link href="~/Content/side-bar/bs3/css/bootstrap.min.css" rel="stylesheet">
+    <link href="~/Content/side-bar/css/bootstrap-reset.css" rel="stylesheet">
+    <link href="~/Content/side-bar/font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <!-- Custom styles for this template -->
+    <link href="~/Content/side-bar/css/style.css" rel="stylesheet">
+    <link href="~/Content/side-bar/css/style-responsive.css" rel="stylesheet" />
+    @Html.Partial("~/Views/Shared/TitleLogo.cshtml")
+</head>
+<body ng-app="RootApp">
+    <section id="container">
+        <!--header start-->
+
+        <div id="login-container">@Html.Partial("~/Views/Shared/TraderPartial.cshtml")</div> 
+        <!--header end-->
+
+        <!--sidebar start-->
+        <!--sidebar end-->
+        <!--main content start-->
+        <section id="main-content">
+            <div id="trader-content">
+                <section class="wrapper">
+                    <!-- page start-->
+                    <div class="row" style="z-index:0">
+                        <div class="col-md-4">
+
+                        </div>
+                        <div class="col-md-4">
+                            <section class="panel">
+                                <div class="panel-body" style="background-color:#f1f2f7">
+                                    <div class="top-stats-panel">
+                                        <div class="daily-visit">
+                                            <h3><b>Welcome To Stock Street</b></h3>
+                                            <h4>Invest in yourself. Your career is the engine of your wealth.</h4>
+                                            <h3>Handle all your orders here.</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                        <div class="col-md-4">
+
+                        </div>
+                    </div>
+                    <div class="row" style="z-index:0">
+                        <div class="col-md-2">
+
+                        </div>
+                        <div class="col-md-8">
+                            <section class="panel">
+                                <div class="panel-body" style="background-color:#f1f2f7">
+                                    <div class="top-stats-panel">
+                                        <!--Video file-->
+                                        <video poster="~/Content/images/video.png" width="720" height="400" controls="controls" onclick="$('video').click(function () {this.paused ? this.play() : this.pause();});">
+                                            <source src="~/Content/Videos/Investing%20in%20Stocks%20(AKA%20Shares%20or%20Equities)%20Explained%20in%20One%20Minute.mp4" type="video/mp4" />
+                                        </video>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                        <div class="col-md-2">
+
+                        </div>
+                    </div>
+                    <!-- page end-->
+                </section>
+            </div>
+        </section>
+        <!--main content end-->
+
+    </section>
+    <!-- Placed js at the end of the document so the pages load faster -->
+    <!--Core js-->
+    <script src="~/Content/side-bar/js/jquery.js"></script>
+    <script src="~/Content/side-bar/bs3/js/bootstrap.min.js"></script>
+    <script class="include" type="text/javascript" src="~/Content/side-bar/js/jquery.dcjqaccordion.2.7.js"></script>
+    <script src="~/Content/side-bar/js/jquery.scrollTo.min.js"></script>
+    <script src="~/Content/side-bar/js/jQuery-slimScroll-1.3.0/jquery.slimscroll.js"></script>
+    <script src="~/Content/side-bar/js/jquery.nicescroll.js"></script>
+    <!--common script init for all pages-->
+    <script src="~/Content/side-bar/js/scripts.js"></script>
+</body>
+</html>
+

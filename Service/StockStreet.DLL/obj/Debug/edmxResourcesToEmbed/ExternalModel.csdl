@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="StockStExternalModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="BrokerSecurity">
+    <Key>
+      <PropertyRef Name="securityId" />
+    </Key>
+    <Property Name="securityId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="securitySymbol" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="securityName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="tradePrice" Type="Decimal" Precision="10" Scale="4" Nullable="false" />
+    <Property Name="maxSpread" Type="Int32" Nullable="false" />
+    <Property Name="maxExeOrder" Type="Int32" Nullable="false" />
+    <Property Name="maxInterval" Type="Int32" Nullable="false" />
+    <Property Name="perFullyExe" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TradeExecution">
+    <Key>
+      <PropertyRef Name="tradeId" />
+    </Key>
+    <Property Name="tradeId" Type="Int32" Nullable="false" />
+    <Property Name="symbol" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="tradedQuantity" Type="Int32" Nullable="false" />
+    <Property Name="tradePrice" Type="Decimal" Precision="10" Scale="4" Nullable="false" />
+    <Property Name="remainingOrderQuantity" Type="Int32" Nullable="false" />
+    <Property Name="blockId" Type="Int32" Nullable="false" />
+    <Property Name="timestamp" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="status" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="ExternalBlock" Relationship="StockStExternalModel.FK_TradeExecution_Block1" FromRole="TradeExecution" ToRole="ExternalBlock" />
+  </EntityType>
+  <EntityContainer Name="StockStExternalEntities1" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="BrokerSecurities" EntityType="Self.BrokerSecurity" />
+    <EntitySet Name="TradeExecutions" EntityType="Self.TradeExecution" />
+    <EntitySet Name="ExternalBlocks" EntityType="StockStExternalModel.ExternalBlock" />
+    <AssociationSet Name="FK_TradeExecution_Block1" Association="StockStExternalModel.FK_TradeExecution_Block1">
+      <End Role="ExternalBlock" EntitySet="ExternalBlocks" />
+      <End Role="TradeExecution" EntitySet="TradeExecutions" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="ExternalBlock">
+    <Key>
+      <PropertyRef Name="blockId" />
+    </Key>
+    <Property Name="blockId" Type="Int32" Nullable="false" />
+    <Property Name="userName" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="symbol" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="side" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="price" Type="Decimal" Nullable="false" Precision="10" Scale="4" />
+    <Property Name="stopPrice" Type="Decimal" Precision="10" Scale="4" />
+    <Property Name="totalQuantity" Type="Int32" Nullable="false" />
+    <Property Name="openQuantity" Type="Int32" />
+    <Property Name="executedQuantity" Type="Int32" />
+    <Property Name="createTStamp" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="updatedTStamp" Type="DateTime" Precision="3" />
+    <Property Name="blockStatus" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="TradeExecutions" Relationship="StockStExternalModel.FK_TradeExecution_Block1" FromRole="ExternalBlock" ToRole="TradeExecution" />
+    <Property Name="orderType" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <Association Name="FK_TradeExecution_Block1">
+    <End Type="StockStExternalModel.ExternalBlock" Role="ExternalBlock" Multiplicity="1" />
+    <End Type="StockStExternalModel.TradeExecution" Role="TradeExecution" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ExternalBlock">
+        <PropertyRef Name="blockId" />
+      </Principal>
+      <Dependent Role="TradeExecution">
+        <PropertyRef Name="blockId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

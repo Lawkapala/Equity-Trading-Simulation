@@ -1,0 +1,209 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="ThemeBucket">
+    @Html.Partial("~/Views/Shared/TitleLogo.cshtml")
+    <title>Open Blocks</title>
+
+    <!--Core CSS -->
+    <link href="~/Content/side-bar/bs3/css/bootstrap.min.css" rel="stylesheet">
+    <link href="~/Content/side-bar/css/bootstrap-reset.css" rel="stylesheet">
+    <link href="~/Content/side-bar/font-awesome/css/font-awesome.css" rel="stylesheet" />
+
+    <!--dynamic table-->
+    <link href="~/Content/side-bar/js/advanced-datatable/css/demo_page.css" rel="stylesheet" />
+    <link href="~/Content/side-bar/js/advanced-datatable/css/demo_table.css" rel="stylesheet" />
+    <link rel="stylesheet" href="~/Content/side-bar/js/data-tables/DT_bootstrap.css" />
+
+    <!-- Custom styles for this template -->
+    <link href="~/Content/side-bar/css/style.css" rel="stylesheet">
+    <link href="~/Content/side-bar/css/style-responsive.css" rel="stylesheet" />
+
+</head>
+
+<body ng-app="RootApp">
+
+    <section id="container">
+        <!--header start-->
+
+        <div id="login-container">@Html.Partial("~/Views/Shared/TraderPartial.cshtml")</div> 
+        <!--header end-->
+        <!--sidebar start-->
+        <!--sidebar end-->
+        <!--main content start-->
+        <section id="main-content">
+            <div id="trader-content" ng-app="Open" ng-controller="OpenBlocks">
+                <section class="wrapper">
+                    <!-- page start-->
+
+                    <div class="row" style="z-index:0">
+                        <div class="col-sm-12">
+                            <section class="panel">
+                                <header class="panel-heading">
+                                    Open Blocks
+                                </header>
+                                <div class="panel-body" style="background-color:#f1f2f7">
+                                    <div class="adv-table">
+                                        <table class="display table table-bordered table-striped" id="dynamic-table">
+                                            <thead>
+                                                <tr>
+                                                    <th>Block ID</th>
+                                                    <th>Symbol</th>
+                                                    <th>Side</th>
+                                                    <th>Price</th>
+                                                    <th>Stop Price</th>
+                                                    <th>Open Qty</th>
+                                                    <th>Executed Qty</th>
+                                                    <th>Status</th>
+                                                    <th>Edit</th>
+                                                    <th>Show</th>
+                                                    <th>Remove</th>
+                                                    <th>Select</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr class="" ng-repeat="obj in Blocks">
+                                                    <td>{{obj.blockId}}</td>
+                                                    <td>{{obj.symbol}}</td>
+                                                    <td>{{obj.side}}</td>
+                                                    <td>{{obj.price}}</td>
+                                                    <td>{{obj.stopPrice}}</td>
+                                                    <td>{{obj.openQuantity}}</td>
+                                                    <td>{{obj.executedQuantity}}</td>
+                                                    <td>{{obj.blockStatus}}</td>
+                                                    <td><a ng-controller="GetTokenController" class="btn btn-primary btn-xs" ng-init="url= 'http://localhost:35986/Trader/TraderEditBlocks/'" ng-href="{{url}}{{token}}/{{obj.blockId}}">Edit</a></td>
+                                                    <td>
+                                                        <div>
+                                                            <button type="button" class="btn btn-primary btn-xs" ng-click="x(obj.blockId)">Show </button>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div>
+                                                            <button type="button" class="btn btn-primary btn-xs" data-toggle="modal" data-target="#myModal" ng-click="cancel(obj)">Remove </button>
+                                                        </div>
+                                                    </td>
+                                                    <td><input ng-model="obj.selected" type="checkbox" name="select" value="{{obj.blockId}}" /></td>
+                                                </tr>
+
+
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+
+                                <div style="float:right;">
+                                    <button class="btn btn-primary" type="button" ng-click="Execute()" style="margin-right:20px;">Execute <i class="fa fa-check"></i></button>
+                                </div>
+
+                            </section>
+
+                        </div>
+                    </div>
+                    <div name="orderlist">
+                        <div class="row" style="z-index:0">
+                            <div class="col-sm-12">
+                                <section class="panel">
+                                    <div class="panel-body" style="background-color:#f1f2f7">
+                                        <div>
+                                            <table class="display table table-bordered table-striped" ng-show="val1">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Order ID</th>
+                                                        <th>Portfolio ID</th>
+                                                        <th>Symbol</th>
+                                                        <th>Side</th>
+                                                        <th>Price</th>
+                                                        <th>Open Qty</th>
+                                                        <th>Executed Qty</th>
+                                                        <th>Total Qty</th>
+                                                        <th>Status</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr ng-repeat="G in Orders">
+                                                        <td>{{G.orderId}}</td>
+                                                        <td>{{G.portfolioId}}</td>
+                                                        <td>{{G.symbol}}</td>
+                                                        <td>{{G.side}}</td>
+                                                        <td>{{G.price}}</td>
+                                                        <td>{{G.openQuantity}}</td>
+                                                        <td>{{G.executedQuantity}}</td>
+                                                        <td>{{G.totalQuantity}}</td>
+                                                        <td>{{G.orderStatus}}</td>
+
+
+                                                    </tr>
+
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </section>
+
+                                <div class="modal fade" id="myModal" role="dialog">
+                                    <div class="modal-dialog">
+
+                                        <!-- Modal content-->
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                <h4 class="modal-title">Confirm Remove</h4>
+                                            </div>
+                                            <div class="modal-body">
+                                                <h3>Stock Detail</h3>
+                                                <div class="space15"></div>
+                                                <label>blockId : </label> <label>{{O.blockId}}</label> <br />
+                                                <label>Symbol : </label><label>{{O.symbol}}</label> <br />
+                                                <label>Quantity : </label><label>{{O.totalQuantity}}</label> <br />
+
+                                                <button type="button" class="btn btn-primary" data-dismiss="modal" ng-click="confirmDelete(O.blockId)">Remove <i class="fa fa-times"></i></button>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-primary" data-dismiss="modal">Close <i class="fa fa-times"></i></button>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <!-- page end-->
+                </section>
+            </div>
+        </section>
+        <!--main content end-->
+
+    </section>
+
+    <!-- Placed js at the end of the document so the pages load faster -->
+    <!--Core js-->
+    <script src="~/Content/side-bar/js/jquery.js"></script>
+    <script src="~/Content/side-bar/bs3/js/bootstrap.min.js"></script>
+    <script class="include" type="text/javascript" src="~/Content/side-bar/js/jquery.dcjqaccordion.2.7.js"></script>
+    <script src="~/Content/side-bar/js/jquery.scrollTo.min.js"></script>
+    <script src="~/Content/side-bar/js/jQuery-slimScroll-1.3.0/jquery.slimscroll.js"></script>
+    <script src="~/Content/side-bar/js/jquery.nicescroll.js"></script>
+    <!--Easy Pie Chart-->
+    <script src="~/Content/side-bar/js/easypiechart/jquery.easypiechart.js"></script>
+    <!--Sparkline Chart-->
+    <script src="~/Content/side-bar/js/sparkline/jquery.sparkline.js"></script>
+
+    <!--dynamic table-->
+    <script type="text/javascript" language="javascript" src="~/Content/side-bar/js/advanced-datatable/js/jquery.dataTables.js"></script>
+    <script type="text/javascript" src="~/Content/side-bar/js/data-tables/DT_bootstrap.js"></script>
+    <!--common script init for all pages-->
+    <script src="~/Content/side-bar/js/scripts.js"></script>
+
+    <!--dynamic table initialization 
+    <script src="~/Content/side-bar/js/dynamic_table_init.js"></script>-->
+
+
+
+</body>
+</html>

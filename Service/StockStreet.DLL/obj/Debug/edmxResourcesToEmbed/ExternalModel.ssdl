@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="StockStExternalModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="BrokerSecurity">
+    <Key>
+      <PropertyRef Name="securityId" />
+    </Key>
+    <Property Name="securityId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="securitySymbol" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="securityName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="tradePrice" Type="decimal" Precision="10" Scale="4" Nullable="false" />
+    <Property Name="maxSpread" Type="int" Nullable="false" />
+    <Property Name="maxExeOrder" Type="int" Nullable="false" />
+    <Property Name="maxInterval" Type="int" Nullable="false" />
+    <Property Name="perFullyExe" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ExternalBlock">
+    <Key>
+      <PropertyRef Name="blockId" />
+    </Key>
+    <Property Name="blockId" Type="int" Nullable="false" />
+    <Property Name="userName" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="symbol" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="side" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="price" Type="decimal" Precision="10" Scale="4" Nullable="false" />
+    <Property Name="stopPrice" Type="decimal" Precision="10" Scale="4" />
+    <Property Name="orderType" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="totalQuantity" Type="int" Nullable="false" />
+    <Property Name="openQuantity" Type="int" />
+    <Property Name="executedQuantity" Type="int" />
+    <Property Name="createTStamp" Type="datetime" Nullable="false" />
+    <Property Name="updatedTStamp" Type="datetime" />
+    <Property Name="blockStatus" Type="varchar" MaxLength="30" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TradeExecution">
+    <Key>
+      <PropertyRef Name="tradeId" />
+    </Key>
+    <Property Name="tradeId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="symbol" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="tradedQuantity" Type="int" Nullable="false" />
+    <Property Name="tradePrice" Type="decimal" Precision="10" Scale="4" Nullable="false" />
+    <Property Name="remainingOrderQuantity" Type="int" Nullable="false" />
+    <Property Name="blockId" Type="int" Nullable="false" />
+    <Property Name="timestamp" Type="datetime" Nullable="false" />
+    <Property Name="status" Type="varchar" MaxLength="30" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_TradeExecution_Block">
+    <End Role="ExternalBlock" Type="Self.ExternalBlock" Multiplicity="1" />
+    <End Role="TradeExecution" Type="Self.TradeExecution" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ExternalBlock">
+        <PropertyRef Name="blockId" />
+      </Principal>
+      <Dependent Role="TradeExecution">
+        <PropertyRef Name="blockId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="StockStExternalModelStoreContainer">
+    <EntitySet Name="BrokerSecurity" EntityType="Self.BrokerSecurity" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ExternalBlock" EntityType="Self.ExternalBlock" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TradeExecution" EntityType="Self.TradeExecution" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_TradeExecution_Block" Association="Self.FK_TradeExecution_Block">
+      <End Role="ExternalBlock" EntitySet="ExternalBlock" />
+      <End Role="TradeExecution" EntitySet="TradeExecution" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

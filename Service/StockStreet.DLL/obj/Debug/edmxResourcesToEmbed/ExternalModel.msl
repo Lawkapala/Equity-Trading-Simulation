@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="StockStExternalModelStoreContainer" CdmEntityContainer="StockStExternalEntities1">
+    <EntitySetMapping Name="BrokerSecurities">
+      <EntityTypeMapping TypeName="StockStExternalModel.BrokerSecurity">
+        <MappingFragment StoreEntitySet="BrokerSecurity">
+          <ScalarProperty Name="securityId" ColumnName="securityId" />
+          <ScalarProperty Name="securitySymbol" ColumnName="securitySymbol" />
+          <ScalarProperty Name="securityName" ColumnName="securityName" />
+          <ScalarProperty Name="tradePrice" ColumnName="tradePrice" />
+          <ScalarProperty Name="maxSpread" ColumnName="maxSpread" />
+          <ScalarProperty Name="maxExeOrder" ColumnName="maxExeOrder" />
+          <ScalarProperty Name="maxInterval" ColumnName="maxInterval" />
+          <ScalarProperty Name="perFullyExe" ColumnName="perFullyExe" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TradeExecutions">
+      <EntityTypeMapping TypeName="StockStExternalModel.TradeExecution">
+        <MappingFragment StoreEntitySet="TradeExecution">
+          <ScalarProperty Name="tradeId" ColumnName="tradeId" />
+          <ScalarProperty Name="symbol" ColumnName="symbol" />
+          <ScalarProperty Name="tradedQuantity" ColumnName="tradedQuantity" />
+          <ScalarProperty Name="tradePrice" ColumnName="tradePrice" />
+          <ScalarProperty Name="remainingOrderQuantity" ColumnName="remainingOrderQuantity" />
+          <ScalarProperty Name="blockId" ColumnName="blockId" />
+          <ScalarProperty Name="timestamp" ColumnName="timestamp" />
+          <ScalarProperty Name="status" ColumnName="status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ExternalBlocks">
+      <EntityTypeMapping TypeName="StockStExternalModel.ExternalBlock">
+        <MappingFragment StoreEntitySet="ExternalBlock">
+          <ScalarProperty Name="orderType" ColumnName="orderType" />
+          <ScalarProperty Name="blockStatus" ColumnName="blockStatus" />
+          <ScalarProperty Name="updatedTStamp" ColumnName="updatedTStamp" />
+          <ScalarProperty Name="createTStamp" ColumnName="createTStamp" />
+          <ScalarProperty Name="executedQuantity" ColumnName="executedQuantity" />
+          <ScalarProperty Name="openQuantity" ColumnName="openQuantity" />
+          <ScalarProperty Name="totalQuantity" ColumnName="totalQuantity" />
+          <ScalarProperty Name="stopPrice" ColumnName="stopPrice" />
+          <ScalarProperty Name="price" ColumnName="price" />
+          <ScalarProperty Name="side" ColumnName="side" />
+          <ScalarProperty Name="symbol" ColumnName="symbol" />
+          <ScalarProperty Name="userName" ColumnName="userName" />
+          <ScalarProperty Name="blockId" ColumnName="blockId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

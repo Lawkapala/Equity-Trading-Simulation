@@ -1,0 +1,153 @@
+﻿
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="ThemeBucket">
+    <link rel="shortcut icon" href="images/favicon.png">
+
+    <title>Executed Orders</title>
+
+    <!--Core CSS -->
+    <link href="/Content/side-bar/bs3/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="/Content/side-bar/css/bootstrap-reset.css" rel="stylesheet" />
+    <link href="/Content/side-bar/font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <link href="/Content/side-bar/js/data-tables/DT_bootstrap.css" rel="stylesheet" />
+    @Html.Partial("~/Views/Shared/TitleLogo.cshtml")
+
+    <!-- Custom styles for this template -->
+    <link href="/Content/side-bar/css/style.css" rel="stylesheet" />
+    <link href="/Content/side-bar/css/style-responsive.css" rel="stylesheet" />
+
+    <!-- Just for debugging purposes. Don't actually copy this line! -->
+    <!--[if lt IE 9]>
+    <script src="js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body ng-app="RootApp">
+
+    <section id="container">
+        <!--header start-->
+        <div id="login-container">@Html.Partial("~/Views/Shared/PMPartial.cshtml")</div>
+        <!-- sidebar menu end-->
+        <!--sidebar end-->
+        <!--main content start-->
+        <section id="main-content">
+            <div id="pm-container" ng-app="UiApp">
+                <section class="wrapper">
+                    <!-- page start-->
+
+                    <div class="row" style="z-index:0">
+                        <div class="col-sm-12">
+                            <section class="panel">
+                                <header class="panel-heading">
+                                    Executed Orders
+                                </header>
+                                <div class="panel-body" style="background-color:#f1f2f7">
+                                    <div>
+                                        <div class="clearfix">
+
+                                            <div class="btn-group pull-right">
+
+                                                <ul class="dropdown-menu pull-right">
+                                                    <li><a href="#">Print</a></li>
+                                                    <li><a href="#">Save as PDF</a></li>
+                                                    <li><a href="#">Export to Excel</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="space15"></div>
+                                        <table class="table table-striped table-hover table-bordered" ng-controller="ExecutedController">
+                                            <thead>
+                                                <tr>
+                                                    <th>Order ID</th>
+                                                    <th>Symbol</th>
+                                                    <th>Side</th>
+                                                    <th>Order Type</th>
+                                                    <th>Order Qualifier</th>
+                                                    <th>UserName</th>
+                                                    <th>Portfolio ID</th>
+                                                    <th>Price</th>
+                                                    <th>Stop Price</th>
+                                                    <th>Total Quantity</th>
+                                                    <th>Open Quantity</th>
+                                                    <th>Executed Quantity</th>
+                                                    <th>Created TimeStamp</th>
+                                                    <th>Order Status</th>
+
+
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr class="" ng-repeat="ex in Executed">
+                                                    <td>{{ex.orderId}}</td>
+                                                    <td>{{ex.symbol}}</td>
+                                                    <td>{{ex.side}}</td>
+                                                    <td>{{ex.orderType}}</td>
+                                                    <td>{{ex.orderQualifier}}</td>
+                                                    <td>{{ex.userName}}</td>
+                                                    <td>{{ex.portfolioId}}</td>
+                                                    <td>{{ex.price}}</td>
+                                                    <td>{{ex.stopPrice}}</td>
+                                                    <td>{{ex.totalQuantity}}</td>
+                                                    <td>{{ex.openQuantity}}</td>
+                                                    <td>{{ex.executedQuantity}}</td>
+                                                    <td>{{ex.createTStamp}}</td>
+                                                    <td>{{ex.orderStatus}}</td>
+
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+                    <!-- page end-->
+                </section>
+            </div>
+</section>
+        <!--main content end-->
+        <!--right sidebar start-->
+        <div class="right-sidebar">
+            <div class="right-stat-bar">
+            </div>
+        </div>
+        <!--right sidebar end-->
+
+    </section>
+
+    <!-- Placed js at the end of the document so the pages load faster -->
+    <!--Core js-->
+    <script src="/Content/side-bar/js/jquery-1.8.3.min.js"></script>
+    <script src="/Content/side-bar/bs3/js/bootstrap.min.js"></script>
+    <script class="include" type="text/javascript" src="/Content/side-bar/js/jquery.dcjqaccordion.2.7.js"></script>
+    <script src="/Content/side-bar/js/jquery.scrollTo.min.js"></script>
+    <script src="/Content/side-bar/js/jQuery-slimScroll-1.3.0/jquery.slimscroll.js"></script>
+    <script src="/Content/side-bar/js/jquery.nicescroll.js"></script>
+    <!--Easy Pie Chart-->
+    <script src="/Content/side-bar/js/easypiechart/jquery.easypiechart.js"></script>
+    <!--Sparkline Chart-->
+    <script src="/Content/side-bar/js/sparkline/jquery.sparkline.js"></script>
+    <!--jQuery Flot Chart-->
+
+    <script type="text/javascript" src="/Content/side-bar/js/data-tables/jquery.dataTables.js"></script>
+    <script type="text/javascript" src="/Content/side-bar/js/data-tables/DT_bootstrap.js"></script>
+
+    <!--common script init for all pages-->
+    <script src="/Content/side-bar/js/scripts.js"></script>
+
+
+
+</body>
+</html>

@@ -1,0 +1,131 @@
+C:\Users\PRIYANSHI GUPTA\Desktop\SSS UI manual\Stock_Street\Stock_Street.UI\bin\roslyn\csc.exe
+C:\Users\PRIYANSHI GUPTA\Desktop\SSS UI manual\Stock_Street\Stock_Street.UI\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\PRIYANSHI GUPTA\Desktop\SSS UI manual\Stock_Street\Stock_Street.UI\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\PRIYANSHI GUPTA\Desktop\SSS UI manual\Stock_Street\Stock_Street.UI\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\PRIYANSHI GUPTA\Desktop\SSS UI manual\Stock_Street\Stock_Street.UI\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\PRIYANSHI GUPTA\Desktop\SSS UI manual\Stock_Street\Stock_Street.UI\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\PRIYANSHI GUPTA\Desktop\SSS UI manual\Stock_Street\Stock_Street.UI\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\PRIYANSHI GUPTA\Desktop\SSS UI manual\Stock_Street\Stock_Street.UI\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\PRIYANSHI GUPTA\Desktop\SSS UI manual\Stock_Street\Stock_Street.UI\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\PRIYANSHI GUPTA\Desktop\SSS UI manual\Stock_Street\Stock_Street.UI\bin\roslyn\vbc.exe
+C:\Users\PRIYANSHI GUPTA\Desktop\SSS UI manual\Stock_Street\Stock_Street.UI\bin\roslyn\VBCSCompiler.exe
+C:\Users\PRIYANSHI GUPTA\Desktop\SSS UI manual\Stock_Street\Stock_Street.UI\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\PRIYANSHI GUPTA\Desktop\SSS UI manual\Stock_Street\Stock_Street.UI\bin\Stock_Street.UI.dll.config
+C:\Users\PRIYANSHI GUPTA\Desktop\SSS UI manual\Stock_Street\Stock_Street.UI\bin\Stock_Street.UI.dll
+C:\Users\PRIYANSHI GUPTA\Desktop\SSS UI manual\Stock_Street\Stock_Street.UI\bin\Stock_Street.UI.pdb
+C:\Users\PRIYANSHI GUPTA\Desktop\SSS UI manual\Stock_Street\Stock_Street.UI\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\PRIYANSHI GUPTA\Desktop\SSS UI manual\Stock_Street\Stock_Street.UI\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\PRIYANSHI GUPTA\Desktop\SSS UI manual\Stock_Street\Stock_Street.UI\bin\System.Web.Helpers.dll
+C:\Users\PRIYANSHI GUPTA\Desktop\SSS UI manual\Stock_Street\Stock_Street.UI\bin\System.Web.Mvc.dll
+C:\Users\PRIYANSHI GUPTA\Desktop\SSS UI manual\Stock_Street\Stock_Street.UI\bin\System.Web.Razor.dll
+C:\Users\PRIYANSHI GUPTA\Desktop\SSS UI manual\Stock_Street\Stock_Street.UI\bin\System.Web.Webpages.Deployment.dll
+C:\Users\PRIYANSHI GUPTA\Desktop\SSS UI manual\Stock_Street\Stock_Street.UI\bin\System.Web.Webpages.dll
+C:\Users\PRIYANSHI GUPTA\Desktop\SSS UI manual\Stock_Street\Stock_Street.UI\bin\System.Web.Webpages.Razor.dll
+C:\Users\PRIYANSHI GUPTA\Desktop\SSS UI manual\Stock_Street\Stock_Street.UI\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\PRIYANSHI GUPTA\Desktop\SSS UI manual\Stock_Street\Stock_Street.UI\bin\System.Web.Razor.xml
+C:\Users\PRIYANSHI GUPTA\Desktop\SSS UI manual\Stock_Street\Stock_Street.UI\bin\System.Web.Webpages.xml
+C:\Users\PRIYANSHI GUPTA\Desktop\SSS UI manual\Stock_Street\Stock_Street.UI\bin\System.Web.Webpages.Deployment.xml
+C:\Users\PRIYANSHI GUPTA\Desktop\SSS UI manual\Stock_Street\Stock_Street.UI\bin\System.Web.Webpages.Razor.xml
+C:\Users\PRIYANSHI GUPTA\Desktop\SSS UI manual\Stock_Street\Stock_Street.UI\bin\System.Web.Helpers.xml
+C:\Users\PRIYANSHI GUPTA\Desktop\SSS UI manual\Stock_Street\Stock_Street.UI\bin\System.Web.Mvc.xml
+C:\Users\PRIYANSHI GUPTA\Desktop\SSS UI manual\Stock_Street\Stock_Street.UI\obj\Debug\Stock_Street.UI.dll
+C:\Users\PRIYANSHI GUPTA\Desktop\SSS UI manual\Stock_Street\Stock_Street.UI\obj\Debug\Stock_Street.UI.pdb
+C:\Users\PRIYANSHI GUPTA\Desktop\SSS\Stock_Street - niket\Stock_Street.UI\bin\roslyn\csc.exe
+C:\Users\PRIYANSHI GUPTA\Desktop\SSS\Stock_Street - niket\Stock_Street.UI\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\PRIYANSHI GUPTA\Desktop\SSS\Stock_Street - niket\Stock_Street.UI\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\PRIYANSHI GUPTA\Desktop\SSS\Stock_Street - niket\Stock_Street.UI\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\PRIYANSHI GUPTA\Desktop\SSS\Stock_Street - niket\Stock_Street.UI\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\PRIYANSHI GUPTA\Desktop\SSS\Stock_Street - niket\Stock_Street.UI\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\PRIYANSHI GUPTA\Desktop\SSS\Stock_Street - niket\Stock_Street.UI\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\PRIYANSHI GUPTA\Desktop\SSS\Stock_Street - niket\Stock_Street.UI\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\PRIYANSHI GUPTA\Desktop\SSS\Stock_Street - niket\Stock_Street.UI\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\PRIYANSHI GUPTA\Desktop\SSS\Stock_Street - niket\Stock_Street.UI\bin\roslyn\vbc.exe
+C:\Users\PRIYANSHI GUPTA\Desktop\SSS\Stock_Street - niket\Stock_Street.UI\bin\roslyn\VBCSCompiler.exe
+C:\Users\PRIYANSHI GUPTA\Desktop\SSS\Stock_Street - niket\Stock_Street.UI\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\PRIYANSHI GUPTA\Desktop\SSS\Stock_Street - niket\Stock_Street.UI\bin\Stock_Street.UI.dll.config
+C:\Users\PRIYANSHI GUPTA\Desktop\SSS\Stock_Street - niket\Stock_Street.UI\bin\Stock_Street.UI.dll
+C:\Users\PRIYANSHI GUPTA\Desktop\SSS\Stock_Street - niket\Stock_Street.UI\bin\Stock_Street.UI.pdb
+C:\Users\PRIYANSHI GUPTA\Desktop\SSS\Stock_Street - niket\Stock_Street.UI\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\PRIYANSHI GUPTA\Desktop\SSS\Stock_Street - niket\Stock_Street.UI\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\PRIYANSHI GUPTA\Desktop\SSS\Stock_Street - niket\Stock_Street.UI\bin\System.Web.Helpers.dll
+C:\Users\PRIYANSHI GUPTA\Desktop\SSS\Stock_Street - niket\Stock_Street.UI\bin\System.Web.Mvc.dll
+C:\Users\PRIYANSHI GUPTA\Desktop\SSS\Stock_Street - niket\Stock_Street.UI\bin\System.Web.Razor.dll
+C:\Users\PRIYANSHI GUPTA\Desktop\SSS\Stock_Street - niket\Stock_Street.UI\bin\System.Web.Webpages.Deployment.dll
+C:\Users\PRIYANSHI GUPTA\Desktop\SSS\Stock_Street - niket\Stock_Street.UI\bin\System.Web.Webpages.dll
+C:\Users\PRIYANSHI GUPTA\Desktop\SSS\Stock_Street - niket\Stock_Street.UI\bin\System.Web.Webpages.Razor.dll
+C:\Users\PRIYANSHI GUPTA\Desktop\SSS\Stock_Street - niket\Stock_Street.UI\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\PRIYANSHI GUPTA\Desktop\SSS\Stock_Street - niket\Stock_Street.UI\bin\System.Web.Razor.xml
+C:\Users\PRIYANSHI GUPTA\Desktop\SSS\Stock_Street - niket\Stock_Street.UI\bin\System.Web.Webpages.xml
+C:\Users\PRIYANSHI GUPTA\Desktop\SSS\Stock_Street - niket\Stock_Street.UI\bin\System.Web.Webpages.Deployment.xml
+C:\Users\PRIYANSHI GUPTA\Desktop\SSS\Stock_Street - niket\Stock_Street.UI\bin\System.Web.Webpages.Razor.xml
+C:\Users\PRIYANSHI GUPTA\Desktop\SSS\Stock_Street - niket\Stock_Street.UI\bin\System.Web.Helpers.xml
+C:\Users\PRIYANSHI GUPTA\Desktop\SSS\Stock_Street - niket\Stock_Street.UI\bin\System.Web.Mvc.xml
+C:\Users\PRIYANSHI GUPTA\Desktop\SSS\Stock_Street - niket\Stock_Street.UI\obj\Debug\Stock_Street.UI.csprojResolveAssemblyReference.cache
+C:\Users\PRIYANSHI GUPTA\Desktop\SSS\Stock_Street - niket\Stock_Street.UI\obj\Debug\Stock_Street.UI.dll
+C:\Users\PRIYANSHI GUPTA\Desktop\SSS\Stock_Street - niket\Stock_Street.UI\obj\Debug\Stock_Street.UI.pdb
+C:\Users\PRIYANSHI GUPTA\Desktop\SSS\StockStreetUI - niket\Stock_Street.UI\bin\roslyn\csc.exe
+C:\Users\PRIYANSHI GUPTA\Desktop\SSS\StockStreetUI - niket\Stock_Street.UI\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\PRIYANSHI GUPTA\Desktop\SSS\StockStreetUI - niket\Stock_Street.UI\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\PRIYANSHI GUPTA\Desktop\SSS\StockStreetUI - niket\Stock_Street.UI\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\PRIYANSHI GUPTA\Desktop\SSS\StockStreetUI - niket\Stock_Street.UI\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\PRIYANSHI GUPTA\Desktop\SSS\StockStreetUI - niket\Stock_Street.UI\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\PRIYANSHI GUPTA\Desktop\SSS\StockStreetUI - niket\Stock_Street.UI\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\PRIYANSHI GUPTA\Desktop\SSS\StockStreetUI - niket\Stock_Street.UI\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\PRIYANSHI GUPTA\Desktop\SSS\StockStreetUI - niket\Stock_Street.UI\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\PRIYANSHI GUPTA\Desktop\SSS\StockStreetUI - niket\Stock_Street.UI\bin\roslyn\vbc.exe
+C:\Users\PRIYANSHI GUPTA\Desktop\SSS\StockStreetUI - niket\Stock_Street.UI\bin\roslyn\VBCSCompiler.exe
+C:\Users\PRIYANSHI GUPTA\Desktop\SSS\StockStreetUI - niket\Stock_Street.UI\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\PRIYANSHI GUPTA\Desktop\SSS\StockStreetUI - niket\Stock_Street.UI\bin\Stock_Street.UI.dll.config
+C:\Users\PRIYANSHI GUPTA\Desktop\SSS\StockStreetUI - niket\Stock_Street.UI\bin\Stock_Street.UI.dll
+C:\Users\PRIYANSHI GUPTA\Desktop\SSS\StockStreetUI - niket\Stock_Street.UI\bin\Stock_Street.UI.pdb
+C:\Users\PRIYANSHI GUPTA\Desktop\SSS\StockStreetUI - niket\Stock_Street.UI\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\PRIYANSHI GUPTA\Desktop\SSS\StockStreetUI - niket\Stock_Street.UI\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\PRIYANSHI GUPTA\Desktop\SSS\StockStreetUI - niket\Stock_Street.UI\bin\System.Web.Helpers.dll
+C:\Users\PRIYANSHI GUPTA\Desktop\SSS\StockStreetUI - niket\Stock_Street.UI\bin\System.Web.Mvc.dll
+C:\Users\PRIYANSHI GUPTA\Desktop\SSS\StockStreetUI - niket\Stock_Street.UI\bin\System.Web.Razor.dll
+C:\Users\PRIYANSHI GUPTA\Desktop\SSS\StockStreetUI - niket\Stock_Street.UI\bin\System.Web.Webpages.Deployment.dll
+C:\Users\PRIYANSHI GUPTA\Desktop\SSS\StockStreetUI - niket\Stock_Street.UI\bin\System.Web.Webpages.dll
+C:\Users\PRIYANSHI GUPTA\Desktop\SSS\StockStreetUI - niket\Stock_Street.UI\bin\System.Web.Webpages.Razor.dll
+C:\Users\PRIYANSHI GUPTA\Desktop\SSS\StockStreetUI - niket\Stock_Street.UI\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\PRIYANSHI GUPTA\Desktop\SSS\StockStreetUI - niket\Stock_Street.UI\bin\System.Web.Razor.xml
+C:\Users\PRIYANSHI GUPTA\Desktop\SSS\StockStreetUI - niket\Stock_Street.UI\bin\System.Web.Webpages.xml
+C:\Users\PRIYANSHI GUPTA\Desktop\SSS\StockStreetUI - niket\Stock_Street.UI\bin\System.Web.Webpages.Deployment.xml
+C:\Users\PRIYANSHI GUPTA\Desktop\SSS\StockStreetUI - niket\Stock_Street.UI\bin\System.Web.Webpages.Razor.xml
+C:\Users\PRIYANSHI GUPTA\Desktop\SSS\StockStreetUI - niket\Stock_Street.UI\bin\System.Web.Helpers.xml
+C:\Users\PRIYANSHI GUPTA\Desktop\SSS\StockStreetUI - niket\Stock_Street.UI\bin\System.Web.Mvc.xml
+C:\Users\PRIYANSHI GUPTA\Desktop\SSS\StockStreetUI - niket\Stock_Street.UI\obj\Debug\Stock_Street.UI.csprojResolveAssemblyReference.cache
+C:\Users\PRIYANSHI GUPTA\Desktop\SSS\StockStreetUI - niket\Stock_Street.UI\obj\Debug\Stock_Street.UI.dll
+C:\Users\PRIYANSHI GUPTA\Desktop\SSS\StockStreetUI - niket\Stock_Street.UI\obj\Debug\Stock_Street.UI.pdb
+C:\Users\Niket Raj\Desktop\Mock\NIKet SSS\SSS UI manual\Stock_Street v2\Stock_Street.UI\bin\roslyn\csc.exe
+C:\Users\Niket Raj\Desktop\Mock\NIKet SSS\SSS UI manual\Stock_Street v2\Stock_Street.UI\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\Niket Raj\Desktop\Mock\NIKet SSS\SSS UI manual\Stock_Street v2\Stock_Street.UI\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Niket Raj\Desktop\Mock\NIKet SSS\SSS UI manual\Stock_Street v2\Stock_Street.UI\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\Niket Raj\Desktop\Mock\NIKet SSS\SSS UI manual\Stock_Street v2\Stock_Street.UI\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\Niket Raj\Desktop\Mock\NIKet SSS\SSS UI manual\Stock_Street v2\Stock_Street.UI\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\Niket Raj\Desktop\Mock\NIKet SSS\SSS UI manual\Stock_Street v2\Stock_Street.UI\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\Niket Raj\Desktop\Mock\NIKet SSS\SSS UI manual\Stock_Street v2\Stock_Street.UI\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\Niket Raj\Desktop\Mock\NIKet SSS\SSS UI manual\Stock_Street v2\Stock_Street.UI\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\Niket Raj\Desktop\Mock\NIKet SSS\SSS UI manual\Stock_Street v2\Stock_Street.UI\bin\roslyn\vbc.exe
+C:\Users\Niket Raj\Desktop\Mock\NIKet SSS\SSS UI manual\Stock_Street v2\Stock_Street.UI\bin\roslyn\VBCSCompiler.exe
+C:\Users\Niket Raj\Desktop\Mock\NIKet SSS\SSS UI manual\Stock_Street v2\Stock_Street.UI\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\Niket Raj\Desktop\Mock\NIKet SSS\SSS UI manual\Stock_Street v2\Stock_Street.UI\bin\Stock_Street.UI.dll.config
+C:\Users\Niket Raj\Desktop\Mock\NIKet SSS\SSS UI manual\Stock_Street v2\Stock_Street.UI\bin\Stock_Street.UI.dll
+C:\Users\Niket Raj\Desktop\Mock\NIKet SSS\SSS UI manual\Stock_Street v2\Stock_Street.UI\bin\Stock_Street.UI.pdb
+C:\Users\Niket Raj\Desktop\Mock\NIKet SSS\SSS UI manual\Stock_Street v2\Stock_Street.UI\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Niket Raj\Desktop\Mock\NIKet SSS\SSS UI manual\Stock_Street v2\Stock_Street.UI\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Niket Raj\Desktop\Mock\NIKet SSS\SSS UI manual\Stock_Street v2\Stock_Street.UI\bin\System.Web.Helpers.dll
+C:\Users\Niket Raj\Desktop\Mock\NIKet SSS\SSS UI manual\Stock_Street v2\Stock_Street.UI\bin\System.Web.Mvc.dll
+C:\Users\Niket Raj\Desktop\Mock\NIKet SSS\SSS UI manual\Stock_Street v2\Stock_Street.UI\bin\System.Web.Razor.dll
+C:\Users\Niket Raj\Desktop\Mock\NIKet SSS\SSS UI manual\Stock_Street v2\Stock_Street.UI\bin\System.Web.Webpages.Deployment.dll
+C:\Users\Niket Raj\Desktop\Mock\NIKet SSS\SSS UI manual\Stock_Street v2\Stock_Street.UI\bin\System.Web.Webpages.dll
+C:\Users\Niket Raj\Desktop\Mock\NIKet SSS\SSS UI manual\Stock_Street v2\Stock_Street.UI\bin\System.Web.Webpages.Razor.dll
+C:\Users\Niket Raj\Desktop\Mock\NIKet SSS\SSS UI manual\Stock_Street v2\Stock_Street.UI\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Niket Raj\Desktop\Mock\NIKet SSS\SSS UI manual\Stock_Street v2\Stock_Street.UI\bin\System.Web.Razor.xml
+C:\Users\Niket Raj\Desktop\Mock\NIKet SSS\SSS UI manual\Stock_Street v2\Stock_Street.UI\bin\System.Web.Webpages.xml
+C:\Users\Niket Raj\Desktop\Mock\NIKet SSS\SSS UI manual\Stock_Street v2\Stock_Street.UI\bin\System.Web.Webpages.Deployment.xml
+C:\Users\Niket Raj\Desktop\Mock\NIKet SSS\SSS UI manual\Stock_Street v2\Stock_Street.UI\bin\System.Web.Webpages.Razor.xml
+C:\Users\Niket Raj\Desktop\Mock\NIKet SSS\SSS UI manual\Stock_Street v2\Stock_Street.UI\bin\System.Web.Helpers.xml
+C:\Users\Niket Raj\Desktop\Mock\NIKet SSS\SSS UI manual\Stock_Street v2\Stock_Street.UI\bin\System.Web.Mvc.xml
+C:\Users\Niket Raj\Desktop\Mock\NIKet SSS\SSS UI manual\Stock_Street v2\Stock_Street.UI\obj\Debug\Stock_Street.UI.csprojResolveAssemblyReference.cache
+C:\Users\Niket Raj\Desktop\Mock\NIKet SSS\SSS UI manual\Stock_Street v2\Stock_Street.UI\obj\Debug\Stock_Street.UI.dll
+C:\Users\Niket Raj\Desktop\Mock\NIKet SSS\SSS UI manual\Stock_Street v2\Stock_Street.UI\obj\Debug\Stock_Street.UI.pdb

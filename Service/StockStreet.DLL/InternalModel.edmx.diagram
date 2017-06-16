@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="8c566fd91ba547eea12d02dc5ee3f902" Name="Diagram1" ZoomLevel="83">
+        <EntityTypeShape EntityType="StockStInternalModel.Block" Width="1.5" PointX="3" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="StockStInternalModel.Market" Width="1.5" PointX="0.75" PointY="3.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="StockStInternalModel.OrderDetail" Width="1.5" PointX="7.5" PointY="8.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="StockStInternalModel.Order" Width="1.5" PointX="5.25" PointY="9.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="StockStInternalModel.Portfolio" Width="1.5" PointX="3" PointY="15.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="StockStInternalModel.UserDetail" Width="1.5" PointX="0.75" PointY="5.75" IsExpanded="true" />
+        <AssociationConnector Association="StockStInternalModel.FK__Block__symbol__1367E606" ManuallyRouted="false" />
+        <AssociationConnector Association="StockStInternalModel.FK__Block__userName__0AD2A005" ManuallyRouted="false" />
+        <AssociationConnector Association="StockStInternalModel.FK__OrderDeta__block__0BC6C43E" ManuallyRouted="false" />
+        <AssociationConnector Association="StockStInternalModel.FK__Orders__symbol__145C0A3F" ManuallyRouted="false" />
+        <AssociationConnector Association="StockStInternalModel.FK__OrderDeta__order__108B795B" ManuallyRouted="false" />
+        <AssociationConnector Association="StockStInternalModel.FK__Orders__portfoli__0F975522" ManuallyRouted="false" />
+        <AssociationConnector Association="StockStInternalModel.FK__Orders__userName__0EA330E9" ManuallyRouted="false" />
+        <AssociationConnector Association="StockStInternalModel.FK__Portfolio__userN__09DE7BCC" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="StockStInternalModel.sysdiagram" Width="1.5" PointX="3.375" PointY="0.75" />
+        <EntityTypeShape EntityType="StockStInternalModel.Feedback" Width="1.5" PointX="5.375" PointY="0.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

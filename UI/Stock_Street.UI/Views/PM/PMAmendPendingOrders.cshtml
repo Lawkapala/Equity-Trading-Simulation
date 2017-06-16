@@ -1,0 +1,209 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="ThemeBucket">
+    <link rel="shortcut icon" href="images/favicon.png">
+
+    <title>Amend Order</title>
+
+    <!--Core CSS -->
+    <link href="~/Content/side-bar/bs3/css/bootstrap.min.css" rel="stylesheet">
+    <link href="~/Content/side-bar/css/bootstrap-reset.css" rel="stylesheet">
+    <link href="~/Content/side-bar/font-awesome/css/font-awesome.css" rel="stylesheet" />
+    @Html.Partial("~/Views/Shared/TitleLogo.cshtml")
+
+    <!--dynamic table-->
+    <link href="~/Content/side-bar/js/advanced-datatable/css/demo_page.css" rel="stylesheet" />
+    <link href="~/Content/side-bar/js/advanced-datatable/css/demo_table.css" rel="stylesheet" />
+    <link rel="stylesheet" href="~/Content/side-bar/js/data-tables/DT_bootstrap.css" />
+
+    <!-- Custom styles for this template -->
+    <link href="~/Content/side-bar/css/style.css" rel="stylesheet">
+    <link href="~/Content/side-bar/css/style-responsive.css" rel="stylesheet" />
+
+    <!-- Just for debugging purposes. Don't actually copy this line! -->
+    <!--[if lt IE 9]>
+    <script src="js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body ng-app="RootApp">
+
+    <section id="container">
+        <!--header start-->        
+        <!-- sidebar menu end-->  
+        <div id="login-container">@Html.Partial("~/Views/Shared/PMPartial.cshtml")</div>          
+        <!--sidebar end-->
+        <!--main content start-->
+        <section id="main-content">
+            <div id="pm-content" ng-app="UiApp" ><!--Write ng app here-->
+                <section class="wrapper" ng-controller="EditPendingOrdersController">
+                    <!-- page start-->
+                    <header class="panel-heading">
+                        Amend Order
+                    </header>
+                    <br />
+                    <br />
+                    <br />
+                    <div class="form">
+                        <form class="cmxform form-horizontal " id="signupForm" method="post" action="" ng-submit="amendOrder(block)">
+                            <div class="form-group ">
+                                <label for="orderid" class="control-label col-lg-2">Order ID</label>
+                                <div class="col-lg-3">
+                                    <input class="form-control" id="orderid" name="orderid" type="text" required ng-model="block.orderId" readonly/>
+                                </div>
+
+                                <label for="symbol" class="control-label col-lg-2">Symbol</label>
+                                <div class="col-lg-3">
+                                    <input class="form-control" id="symbol" name="symbol" type="text" required ng-model="block.symbol" readonly/>
+                                </div>
+                            </div>
+                            <!---->
+                            <div class="form-group ">
+                                @*<label for="side" class="control-label col-lg-2">Side</label>
+                                <div class="col-lg-3">
+                                    <div class="col-sm-9 icheck minimal" style="display:inline">
+                                        <div>
+                                            <input tabindex="3" type="radio" name="side">
+                                            <label>Sell</label>
+                                        </div>
+                                        <div>
+                                            <input tabindex="3" type="radio" name="side">
+                                            <label>Buy</label>
+                                        </div>
+                                    </div>
+
+                                </div>*@
+                                <label for="ordertype" class="control-label col-lg-2">Order Type</label>
+                                <div class="col-lg-3">
+                                    <div>
+                                        <input class="form-control" id="orderType" name="orderType" type="text" required ng-model="block.orderType" readonly />
+                                    </div>
+                                </div>
+
+
+                            </div>
+                            <div class="form-group ">
+                                <label for="portfolioid" class="control-label col-lg-2">Portfolios</label>
+                                <div class="col-lg-3">
+                                    <div>
+                                        <select id="portfolio" ng-model="block.portfolioId" name="portfolio" class="form-control input-lg m-bot15">
+                                            <option ng-repeat="port in PMPortfolios" value="{{port.portfolioId}}">{{port.portfolioName}}</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                @*<label for="username" class="control-label col-lg-2">Trader Username</label>
+                                <div class="col-lg-3">
+                                    <div>
+                                        <select id="username" name="username" class="form-control input-lg m-bot15">
+                                            <option>Trader 1</option>
+                                            <option>Trader 2</option>
+                                        </select>
+                                    </div>
+                                </div>*@
+
+                            </div>
+                            <div class="form-group ">
+                                @*<label for="orderqualifier" class="control-label col-lg-2">Order Qualifier</label>
+                                <div class="col-lg-3">
+                                    <div class="col-sm-9 icheck minimal" style="display:inline">
+                                        <div>
+                                            <input tabindex="3" type="radio" name="orderqualifier">
+                                            <label>GTC</label>
+                                        </div>
+                                        <div>
+                                            <input tabindex="3" type="radio" name="orderqualifier">
+                                            <label>GTD</label>
+                                        </div>
+                                    </div>
+                                </div>*@
+                                @*<label for="price" class="control-label col-lg-2">Price</label>
+                                <div class="col-lg-3">
+                                    <input class="form-control" id="price" name="price" type="text" required ng-model="block.price"/>
+                                </div>*@
+
+                            </div>
+                            <div class="form-group ">
+                                @*<label for="stopprice" class="control-label col-lg-2">Stop Price</label>
+                                <div class="col-lg-3">
+                                    <input class="form-control" id="stopprice" name="stopprice" type="text" required ng-model="block.stopPrice"/>
+                                </div>*@
+                                <label for="totalquantity" class="control-label col-lg-2">Total Quantity</label>
+                                <div class="col-lg-3">
+                                    <input class="form-control" id="totalquantity" name="totalquantity" type="text" required ng-model="block.totalQuantity"/>
+                                </div>
+
+                            </div>
+                            @*<div class="form-group ">
+                                <label for="openquantity" class="control-label col-lg-2">Open Quantity</label>
+                                <div class="col-lg-3">
+                                    <input class="form-control" id="openquantity" name="openquantity" type="text" required ng-model="block.openQuantity"/>
+                                </div>
+                                <label for="executedquantity" class="control-label col-lg-2">Executed Quantity</label>
+                                <div class="col-lg-3">
+                                    <input class="form-control" id="executedquantity" name="executedquantity" type="text" required ng-model="block.executedQuantity"/>
+                                </div>
+
+                            </div>*@
+
+                        
+                        <br />
+                        <br />
+                        <div class="col-lg-5"></div>
+                        <div class="form-group">
+                            <div>
+                                <button class="btn btn-primary btn-lg" type="submit">Save <i class="fa fa-check"></i></button><!--Write Save code-->
+                                &nbsp;
+                                <button class="btn btn-primary btn-lg" type="button">Cancel <i class="fa fa-times"></i></button><!--Write clear text box code-->
+                            </div>
+                        </div>
+                            </form>
+                    </div>
+
+                    <!-- page end-->
+                </section>
+            </div>
+        </section>
+        <!--main content end-->
+
+    </section>
+
+    <!-- Placed js at the end of the document so the pages load faster -->
+    <!--Core js-->
+    <script src="~/Content/side-bar/js/jquery.js"></script>
+    <script src="~/Content/side-bar/bs3/js/bootstrap.min.js"></script>
+    <script class="include" type="text/javascript" src="~/Content/side-bar/js/jquery.dcjqaccordion.2.7.js"></script>
+    <script src="~/Content/side-bar/js/jquery.scrollTo.min.js"></script>
+    <script src="~/Content/side-bar/js/jQuery-slimScroll-1.3.0/jquery.slimscroll.js"></script>
+    <script src="~/Content/side-bar/js/jquery.nicescroll.js"></script>
+    <!--Easy Pie Chart-->
+    <script src="~/Content/side-bar/js/easypiechart/jquery.easypiechart.js"></script>
+    <!--Sparkline Chart-->
+    <script src="~/Content/side-bar/js/sparkline/jquery.sparkline.js"></script>
+
+    <!--dynamic table-->
+    <script type="text/javascript" language="javascript" src="~/Content/side-bar/js/advanced-datatable/js/jquery.dataTables.js"></script>
+    <script type="text/javascript" src="~/Content/side-bar/js/data-tables/DT_bootstrap.js"></script>
+    <!--common script init for all pages-->
+    <script src="~/Content/side-bar/js/scripts.js"></script>
+
+    <!--dynamic table initialization -->
+    <script src="~/Content/side-bar/js/dynamic_table_init.js"></script>
+
+
+
+</body>
+</html>

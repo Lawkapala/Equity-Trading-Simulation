@@ -1,0 +1,205 @@
+﻿
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="ThemeBucket">
+
+    @Html.Partial("~/Views/Shared/TitleLogo.cshtml")
+
+    <title>Allocated Blocks</title>
+
+    <!--Core CSS -->
+    <link href="/Content/side-bar/bs3/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="/Content/side-bar/css/bootstrap-reset.css" rel="stylesheet" />
+    <link href="/Content/side-bar/font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <link href="/Content/side-bar/js/data-tables/DT_bootstrap.css" rel="stylesheet" />
+
+    <!-- Custom styles for this template -->
+    <link href="/Content/side-bar/css/style.css" rel="stylesheet" />
+    <link href="/Content/side-bar/css/style-responsive.css" rel="stylesheet" />
+
+    <!-- Just for debugging purposes. Don't actually copy this line! -->
+    <!--[if lt IE 9]>
+    <script src="js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body  ng-app="RootApp">
+
+    <section id="container">
+        <!--header start-->
+
+        <div id="login-container">@Html.Partial("~/Views/Shared/TraderPartial.cshtml")</div> 
+        <!--header end-->
+        <!--sidebar start-->
+        <!--sidebar end-->
+        <!--main content start-->
+        <section id="main-content">
+            <div id="trader-content" ng-app="Open" ng-controller="ExecutedBlocks">
+                <section class="wrapper">
+                    <!-- page start-->
+
+                    <div class="row" style="z-index:0">
+                        <div class="col-sm-12">
+                            <section class="panel">
+                                <header class="panel-heading">
+                                    Allocated Blocks
+                                </header>
+                                <div class="panel-body" style="background-color:#f1f2f7">
+                                    <div>
+                                        <div class="clearfix">
+
+                                            <div class="btn-group pull-right">
+
+                                                <ul class="dropdown-menu pull-right">
+                                                    <li><a href="#">Print</a></li>
+                                                    <li><a href="#">Save as PDF</a></li>
+                                                    <li><a href="#">Export to Excel</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="space15"></div>
+
+                                        <div class="adv-table">
+                                            <table class="display table table-bordered table-striped">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Block ID</th>
+                                                        <th>Username</th>
+                                                        <th>Symbol</th>
+                                                        <th>Side</th>
+                                                        <th>Price</th>
+                                                        <th>Stop Price</th>
+                                                        <th>Total Quantity</th>
+                                                        <th>Open Quantity</th>
+                                                        <th>Executed Quantity</th>
+                                                        <th>Block Status</th>
+                                                        <th>Show</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr class="" ng-repeat="G in ExeBlocks">
+                                                        <td>{{G.blockId}}</td>
+                                                        <td>{{G.userName}}</td>
+                                                        <td>{{G.symbol}}</td>
+                                                        <td>{{G.side}}</td>
+                                                        <td>{{G.price}}</td>
+                                                        <td>{{G.stopPrice}}</td>
+                                                        <td>{{G.totalQuantity}}</td>
+                                                        <td>{{G.openQuantity}}</td>
+                                                        <td>{{G.executedQuantity}}</td>
+                                                        <td>{{G.blockStatus}}</td>
+                                                        <td>
+                                                            <div>
+                                                                <button type="button" class="btn btn-primary btn-xs" ng-click="y(G.blockId)">Show </button>
+                                                            </div>
+                                                        </td>
+
+                                                    </tr>
+
+
+                                                </tbody>
+                                            </table>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+                    <div name="orderlist">
+                        <div class="row" style="z-index:0">
+                            <div class="col-sm-12">
+                                <section class="panel">
+                                    <div class="panel-body" style="background-color:#f1f2f7">
+                                        <div>
+                                            <table class="display table table-bordered table-striped" ng-show="val">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Order ID</th>
+                                                        <th>Portfolio ID</th>
+                                                        <th>Symbol</th>
+                                                        <th>Side</th>
+                                                        <th>Price</th>
+                                                        <th>Open Qty</th>
+                                                        <th>Executed Qty</th>
+                                                        <th>Total Qty</th>
+                                                        <th>Status</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr class="" ng-repeat="G in Orders">
+                                                        <td>{{G.orderId}}</td>
+                                                        <td>{{G.portfolioId}}</td>
+                                                        <td>{{G.symbol}}</td>
+                                                        <td>{{G.side}}</td>
+                                                        <td>{{G.price}}</td>
+                                                        <td>{{G.openQuantity}}</td>
+                                                        <td>{{G.executedQuantity}}</td>
+                                                        <td>{{G.totalQuantity}}</td>
+                                                        <td>{{G.orderStatus}}</td>
+
+
+                                                    </tr>
+
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </section>
+
+                            </div>
+                        </div>
+                    </div>
+                    <!-- page end-->
+                </section>
+            </div>
+        </section>
+        <!--main content end-->
+        <!--right sidebar start-->
+        <div class="right-sidebar">
+            <div class="right-stat-bar">
+            </div>
+        </div>
+        <!--right sidebar end-->
+
+    </section>
+
+    <!-- Placed js at the end of the document so the pages load faster -->
+    <!--Core js-->
+    <script src="/Content/side-bar/js/jquery-1.8.3.min.js"></script>
+    <script src="/Content/side-bar/bs3/js/bootstrap.min.js"></script>
+    <script class="include" type="text/javascript" src="/Content/side-bar/js/jquery.dcjqaccordion.2.7.js"></script>
+    <script src="/Content/side-bar/js/jquery.scrollTo.min.js"></script>
+    <script src="/Content/side-bar/js/jQuery-slimScroll-1.3.0/jquery.slimscroll.js"></script>
+    <script src="/Content/side-bar/js/jquery.nicescroll.js"></script>
+    <!--Easy Pie Chart-->
+    <script src="/Content/side-bar/js/easypiechart/jquery.easypiechart.js"></script>
+    <!--Sparkline Chart-->
+    <script src="/Content/side-bar/js/sparkline/jquery.sparkline.js"></script>
+    <!--jQuery Flot Chart-->
+   
+
+    <script type="text/javascript" src="/Content/side-bar/js/data-tables/jquery.dataTables.js"></script>
+    <script type="text/javascript" src="/Content/side-bar/js/data-tables/DT_bootstrap.js"></script>
+
+    <!--common script init for all pages-->
+    <script src="/Content/side-bar/js/scripts.js"></script>
+
+    <!--script for this page only-->
+
+    <!-- END JAVASCRIPTS -->
+   
+    
+</body>
+</html>
